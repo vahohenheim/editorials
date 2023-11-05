@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 
 export interface HeadingComponentProps {
     tag: HeadingTags;
+    className?: string;
     apperance?: HeadingTags;
     children: ReactNode;
 }

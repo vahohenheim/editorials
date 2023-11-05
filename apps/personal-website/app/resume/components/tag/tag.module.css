@@ -1,0 +1,17 @@
+.tag {
+    display: inline-block;
+    background: #27292E;
+    border: 1px solid #3D424C;
+    border-radius: 4px;
+    padding: 3px 5px;
+} 
+
+.text {
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;    
+    
+    color: #FFFFFF;
+}

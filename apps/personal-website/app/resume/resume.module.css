@@ -1,0 +1,27 @@
+.main {
+    padding-bottom: 140px;
+}
+
+.cover {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    text-align: left;
+    padding-top: 160px;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    .cover {
+        padding-top: 100px;
+    }
+}
+
+.avatar {
+    margin-bottom: 16px;
+    border-radius: 100%;
+}
+
+.logo {
+    margin-bottom: 12px;
+}
