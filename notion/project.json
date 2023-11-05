@@ -1,0 +1,16 @@
+{
+  "name": "notion",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "notion/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["notion/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  }
+}

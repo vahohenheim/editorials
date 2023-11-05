@@ -1,0 +1,26 @@
+.title {
+  width: 100%;
+  padding-bottom: 12px;
+}
+
+.cover {
+  height: 300px;
+  width: 100%;
+}
+
+.cover img {
+  max-width: 100%;
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.emoji {
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", EmojiSymbols;
+  white-space: nowrap;
+}
+
+.image {
+  width: 700px;
+  height: 300px;
+}

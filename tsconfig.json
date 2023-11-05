@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@editorials/ui": ["ui/src/index.ts"],
+      "@editorials/ui/*": ["ui/src/*"]
+    }
+  }
+}

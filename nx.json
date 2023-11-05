@@ -1,55 +1,74 @@
 {
-  "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "targetDefaults": {
-    "build": {
-      "cache": true,
-      "dependsOn": ["^build"],
-      "inputs": ["production", "^production"]
-    },
-    "lint": {
-      "cache": true,
-      "inputs": [
-        "default",
-        "{workspaceRoot}/.eslintrc.json",
-        "{workspaceRoot}/.eslintignore",
-        "{workspaceRoot}/eslint.config.js"
-      ]
-    },
-    "test": {
-      "cache": true,
-      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
-    },
-    "e2e": {
-      "cache": true,
-      "inputs": ["default", "^production"]
-    }
-  },
-  "namedInputs": {
-    "default": ["{projectRoot}/**/*", "sharedGlobals"],
-    "production": [
-      "default",
-      "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
-      "!{projectRoot}/tsconfig.spec.json",
-      "!{projectRoot}/jest.config.[jt]s",
-      "!{projectRoot}/src/test-setup.[jt]s",
-      "!{projectRoot}/test-setup.[jt]s",
-      "!{projectRoot}/.eslintrc.json",
-      "!{projectRoot}/eslint.config.js"
-    ],
-    "sharedGlobals": []
-  },
-  "generators": {
-    "@nx/react": {
-      "application": {
-        "babel": true
-      }
-    },
-    "@nx/next": {
-      "application": {
-        "style": "scss",
-        "linter": "eslint"
-      }
-    }
-  },
-  "nxCloudAccessToken": "NjE4ZDY4NWYtM2I5Ny00OTBkLTlkNmMtYzMxN2I1OTFkN2U0fHJlYWQtd3JpdGU="
+	"$schema": "./node_modules/nx/schemas/nx-schema.json",
+	"tasksRunnerOptions": {
+		"default": {
+			"runner": "@vercel/remote-nx",
+			"options": {
+				"cacheableOperations": ["build", "test", "lint", "e2e"],
+				"canTrackAnalytics": false,
+				"showUsageWarnings": true			
+			}
+		},
+		"no-cloud": {
+			"runner": "@nrwl/workspace/src/tasks-runner/default-tasks-runner",
+			"options": {}
+		}
+	},
+	"targetDefaults": {
+		"build": {
+			"cache": true,
+			"dependsOn": ["^build"],
+			"inputs": ["production", "^production"]
+		},
+		"lint": {
+			"cache": true,
+			"inputs": [
+				"default",
+				"{workspaceRoot}/.eslintrc.json",
+				"{workspaceRoot}/.eslintignore",
+				"{workspaceRoot}/eslint.config.js"
+			]
+		},
+		"test": {
+			"cache": true,
+			"inputs": [
+				"default",
+				"^production",
+				"{workspaceRoot}/jest.preset.js"
+			]
+		},
+		"e2e": {
+			"cache": true,
+			"inputs": ["default", "^production"]
+		}
+	},
+	"namedInputs": {
+		"default": ["{projectRoot}/**/*", "sharedGlobals"],
+		"production": [
+			"default",
+			"!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
+			"!{projectRoot}/tsconfig.spec.json",
+			"!{projectRoot}/jest.config.[jt]s",
+			"!{projectRoot}/src/test-setup.[jt]s",
+			"!{projectRoot}/test-setup.[jt]s",
+			"!{projectRoot}/.eslintrc.json",
+			"!{projectRoot}/eslint.config.js"
+		],
+		"sharedGlobals": []
+	},
+	"generators": {
+		"@nx/react": {
+			"application": {
+				"babel": true
+			},
+			"library": {}
+		},
+		"@nx/next": {
+			"application": {
+				"style": "scss",
+				"linter": "eslint"
+			}
+		}
+	},
+	"nxCloudAccessToken": "NjE4ZDY4NWYtM2I5Ny00OTBkLTlkNmMtYzMxN2I1OTFkN2U0fHJlYWQtd3JpdGU="
 }
