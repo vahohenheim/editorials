@@ -2,40 +2,27 @@ import Image from "next/image";
 import styles from "./resume.module.css";
 import avatar from "./../../public/avatar.png";
 import valentinbourreau from "./../../public/valentinbourreau.svg";
-import { ExperiencesComponent } from "./components/experiences/experiences.component";
+import { ExperiencesComponent } from "./_components/experiences/experiences.component";
 import { EXPERIENCES, EXPERTISES, QUALIFICATIONS } from "./resume.constants";
-import { QualificationsComponent } from "./components/qualifications/qualifications.component";
-import { ExpertisesComponent } from "./components/expertises/expertises.component";
+import { QualificationsComponent } from "./_components/qualifications/qualifications.component";
+import { ExpertisesComponent } from "./_components/expertises/expertises.component";
 import { HeadingComponent, HeadingTags } from "@editorials/ui/server";
+import CoverComponent from "../_components/cover/cover.component";
+import { CoverAlignment } from "../_components/cover/cover.model";
+
+export const metadata = {
+	title: "Resume | valentin bourreau",
+	description: "sample of expertises, experiences and qualifications"
+};
 
 export default function Resume() {
 	return (
 		<main className="max-w-[900px] mx-auto">
 			<div className="container">
-				<div className={styles.cover}>
-					<Image
-						className={styles.avatar}
-						src={avatar}
-						alt="valentin bourreau picture"
-						width={70}
-						height={70}
-						placeholder="blur"
-					/>
-					<Image
-						className={styles.logo}
-						src={valentinbourreau}
-						alt="valentin bourreau logo"
-						width={162}
-						height={14}
-						priority
-					/>
-					<HeadingComponent
-						tag={HeadingTags.H1}
-						className="mt-0 mb-2"
-					>
-						Front-end engineer
-					</HeadingComponent>
-				</div>
+				<CoverComponent
+					title="Front-end engineer"
+					alignment={CoverAlignment.LEFT}
+				/>
 				<ExpertisesComponent
 					title={"Expertises"}
 					expertises={EXPERTISES}

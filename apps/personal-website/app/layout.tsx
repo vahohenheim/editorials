@@ -3,14 +3,8 @@ import { AnalyticsWrapper, ScrollTopComponent } from "@editorials/ui";
 import { cn } from "@editorials/ui/server";
 import { RootLayoutProps } from "@editorials/next/server";
 import { GeistSans } from "geist/font";
-import { BackgroundComponent } from "./components/background/background.component";
-import { HeaderComponent } from "./components/header/header.component";
-
-export const metadata = {
-	title: "valentin bourreau",
-	description: "Valentin Bourreau personal website",
-	icons: `data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>`
-};
+import { BackgroundComponent } from "./_components/background/background.component";
+import { HeaderComponent } from "./_components/header/header.component";
 
 export default function RootLayout({ children }: RootLayoutProps) {
 	return (

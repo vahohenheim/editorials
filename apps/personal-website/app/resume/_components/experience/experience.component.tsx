@@ -16,20 +16,25 @@ export const ExperienceComponent = ({
 }: ExperienceComponentProps) => {
 	return (
 		<Card>
-			<CardHeader>
-				<CardTitle>
-					<Image
-						className="mb-2"
-						src={experience.icon}
-						alt={experience.entreprise.toLowerCase()}
-						width={40}
-						height={40}
-					/>
-					{experience.job} at {experience.entreprise}{" "}
-				</CardTitle>
-				<CardDescription>
-					from {experience.startDate} to {experience.endDate}
-				</CardDescription>
+			<CardHeader
+				className={`flex items-start ${
+					inlineTitle && "flex-row items-center"
+				} gap-2`}
+			>
+				<Image
+					src={experience.icon}
+					alt={experience.entreprise.toLowerCase()}
+					width={40}
+					height={40}
+				/>
+				<div className="grow">
+					<CardTitle>
+						{experience.job} at {experience.entreprise}{" "}
+					</CardTitle>
+					<CardDescription>
+						from {experience.startDate} to {experience.endDate}
+					</CardDescription>
+				</div>
 				{experience.tag && (
 					<Badge variant="outline">{experience.tag}</Badge>
 				)}

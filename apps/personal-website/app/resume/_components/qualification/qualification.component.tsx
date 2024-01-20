@@ -14,7 +14,7 @@ export const QualificationComponent = ({
 }: QualificationComponentProps) => {
 	return (
 		<Card>
-			<CardHeader>
+			<CardHeader className="flex flex-row items-center gap-2">
 				<Image
 					className={styles.title}
 					src={qualificationIcon}
@@ -22,13 +22,15 @@ export const QualificationComponent = ({
 					width={40}
 					height={40}
 				/>
-				<CardTitle>
-					{qualification.name} in {qualification.obtainDate}
-				</CardTitle>
-				<CardDescription>
-					{qualification.level} at {qualification.school.name},{" "}
-					{qualification.school.location}
-				</CardDescription>
+				<div>
+					<CardTitle>
+						{qualification.name} in {qualification.obtainDate}
+					</CardTitle>
+					<CardDescription>
+						{qualification.level} at {qualification.school.name},{" "}
+						{qualification.school.location}
+					</CardDescription>
+				</div>
 			</CardHeader>
 		</Card>
 	);
