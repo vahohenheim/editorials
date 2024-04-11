@@ -17,25 +17,20 @@ export const metadata = {
 
 export default function Resume() {
 	return (
-		<main className="max-w-[900px] mx-auto">
-			<div className="container">
-				<CoverComponent
-					title="Front-end engineer"
-					alignment={CoverAlignment.LEFT}
-				/>
-				<ExpertisesComponent
-					title={"Expertises"}
-					expertises={EXPERTISES}
-				/>
-				<ExperiencesComponent
-					title={"Job Experiences"}
-					experiences={EXPERIENCES}
-				/>
-				<QualificationsComponent
-					title={"Qualifications"}
-					qualifications={QUALIFICATIONS}
-				/>
-			</div>
+		<main className="container">
+			<CoverComponent
+				title="Front-end engineer"
+				alignment={CoverAlignment.LEFT}
+			/>
+			<ExpertisesComponent title={"Expertises"} expertises={EXPERTISES} />
+			<ExperiencesComponent
+				title={"Job Experiences"}
+				experiences={EXPERIENCES}
+			/>
+			<QualificationsComponent
+				title={"Qualifications"}
+				qualifications={QUALIFICATIONS}
+			/>
 		</main>
 	);
 }

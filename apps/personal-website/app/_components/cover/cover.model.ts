@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
 export type CoverComponentProps = {
-    title: string;
+    title: ReactNode;
     description?: ReactNode;
     alignment?: CoverAlignment;
     buttons?: Array<CoverButton>;

@@ -1,29 +1,21 @@
-import { Page } from "notion-api-types/responses";
 import { NotionApi } from "./notion.api";
-import { NotionBlocks, NotionBlockType } from "./notion.model";
+import { NotionBlockType } from "./notion.model";
 
 export class NotionAdapter {
-    static async getPageMeta(pageId: string): Promise<Page> {
-        return await NotionApi.getPage(pageId);
-    }
-
-    static async getBlock(pageId: string): Promise<NotionBlocks> {
-        return await NotionApi.getBlock(pageId);
-    }
-
-    static async getPageData(pageId: string): Promise<[Page, NotionBlocks]> {
-        const page = await NotionApi.getPage(pageId);
-        const blocks = await NotionApi.getBlockChildren(pageId);
-        return [page, blocks];
-    }
-
     static async getPageChild(pageId: string): Promise<Array<string>> {
-        const blocks = await NotionApi.getBlockChildren(pageId);
+        const blocks = await NotionApi.fetchBlockChildren(pageId);
+
+        if(!blocks) {
+            return []
+        }
+
         const filterChildPage = (block: any) => block.type === NotionBlockType.CHILD_PAGE;
         const getPageIdFromBlock = (block: any) => block.id;
+
         return blocks.results.filter(filterChildPage).map(getPageIdFromBlock);
     }
 
+    // TODO: make it really recursive
     static async getPageChildRecursive(pageId: string): Promise<Array<Array<string>>> {
         const children = []
         const blocks = await NotionAdapter.getPageChild(pageId);

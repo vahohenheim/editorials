@@ -6,12 +6,12 @@ import {
 } from "@editorials/ui/server";
 import { ExpertiseComponentProps } from "./expertise.model";
 
-export const ExpertiseComponent = ({ expertise }: ExpertiseComponentProps) => {
+export const ExpertiseComponent = ({ title, text }: ExpertiseComponentProps) => {
 	return (
 		<Card>
 			<CardHeader>
-				<CardTitle>{expertise.title}</CardTitle>
-				<CardDescription>{expertise.text}</CardDescription>
+				<CardTitle>{title}</CardTitle>
+				<CardDescription>{text}</CardDescription>
 			</CardHeader>
 		</Card>
 	);

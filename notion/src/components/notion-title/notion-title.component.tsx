@@ -9,7 +9,8 @@ import { NotionParentNavigationComponent } from "../notion-parent-navigation/not
 import { HeadingComponent, HeadingTags } from "@editorials/ui/server";
 
 export const NotionTitleComponent = ({
-	page
+	page,
+	hasParent
 }: NotionTitleComponentProps): JSX.Element => {
 	const rootPageId = process.env.BLOG_INDEX_ID;
 	const cover = getNotionCover(page.cover);
@@ -19,7 +20,7 @@ export const NotionTitleComponent = ({
 
 	return (
 		<div className={styles.title}>
-			{parentId && page.id !== rootPageId ? (
+			{hasParent && parentId && page.id !== rootPageId ? (
 				<NotionParentNavigationComponent parentId={parentId} />
 			) : (
 				""

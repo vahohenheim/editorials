@@ -1,14 +1,17 @@
 .header {
-    /*background-color: var(--header-background-color);*/
-    height: 50px;
-    position: sticky;
-    top: 0;
-    /*backdrop-filter: saturate(180%) blur(20px);*/
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;    
+  position: sticky;
+  top: 0;
+  backdrop-filter: saturate(180%) blur(20px);
+  z-index: 2;
 }
 
-.header > div {
-    flex-grow: 1;
+.nav {
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
 }

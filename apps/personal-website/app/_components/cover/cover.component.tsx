@@ -1,49 +1,32 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./cover.module.css";
-import avatar from "../../../public/avatar.png";
-import valentinbourreau from "../../../public/valentinbourreau.svg";
 import { Button, HeadingComponent, HeadingTags } from "@editorials/ui/server";
-import { CoverAlignment, CoverComponentProps } from "./cover.model";
+import { CoverComponentProps } from "./cover.model";
 import classnames from "classnames";
 
 const CoverComponent = ({
 	title,
 	description,
-	alignment = CoverAlignment.CENTER,
 	buttons,
 	socialNetworks
 }: CoverComponentProps) => {
 	const hasButtons = buttons && buttons.length > 0;
 	const hasSocialNetwork = socialNetworks && socialNetworks.length > 0;
-	const hasActions = hasButtons && hasSocialNetwork;
+	const hasActions = hasButtons || hasSocialNetwork;
 	return (
-		<div
-			className={classnames(styles.cover, {
-				[styles[alignment as string]]: alignment
-			})}
-		>
-			<Image
-				className={styles.avatar}
-				src={avatar}
-				alt="valentin bourreau picture"
-				width={70}
-				height={70}
-				placeholder="blur"
-			/>
-			<Image
-				className={styles.logo}
-				src={valentinbourreau}
-				alt="valentin bourreau logo"
-				width={162}
-				height={14}
-				priority
-			/>
+		<div className={classnames(styles.cover)}>
 			<HeadingComponent tag={HeadingTags.H1} className="mt-0 mb-2">
 				{title}
 			</HeadingComponent>
 			{description && (
-				<p className="text-slate-600 mb-8">{description}</p>
+				<HeadingComponent
+					apperance={HeadingTags.H2}
+					tag={HeadingTags.PARAGRAPH}
+					className="text-muted-foreground mb-8"
+				>
+					{description}
+				</HeadingComponent>
 			)}
 			{hasActions && (
 				<div className={styles.actions}>

@@ -10,6 +10,7 @@ export * from './components/heading/heading';
 export * from './components/hover-card/hover-card';
 export * from './components/link/link';
 export * from './components/link/link.model';
+export * from './components/navigation-menu/navigation-menu';
 export * from './components/scroll-top/scroll-top';
 export * from './components/select/select';
 export * from './components/skeleton/skeleton';

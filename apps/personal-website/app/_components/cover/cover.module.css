@@ -1,23 +1,16 @@
 .cover {
   display: flex;
-  align-items: center;
   flex-direction: column;
-  text-align: center;
-  padding-top: 160px;
+  align-items: flex-start;
+  text-align: left;
+  padding-top: 120px;
 }
 
 /* Mobile */
 @media (max-width: 700px) {
   .cover {
-    align-items: flex-start;
-    text-align: left;
     padding-top: 100px;
   }
-}
-
-.left {
-  align-items: flex-start;
-  text-align: left;
 }
 
 .avatar {
