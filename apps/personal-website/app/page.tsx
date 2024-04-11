@@ -17,18 +17,14 @@ export default function Home() {
 					title="Front-end engineer"
 					description={
 						<>
-							pationate by crafting static websites and web
+							Pationate by crafting static websites and web
 							applications.
 							<br />
-							Mainly work on <b>React 18</b> and <b>Next.js 14</b>
-							. A Javacript lover.
+							Mainly work on <b>React 18</b>, <b>Next.js 14</b>{" "}
+							and <b>Angular 17</b>. A Javacript lover.
 						</>
 					}
 					buttons={[
-						{
-							label: "Show my resume",
-							link: "/resume"
-						},
 						{
 							label: "Connect with me",
 							link: "https://www.linkedin.com/in/valentin-bourreau/"
