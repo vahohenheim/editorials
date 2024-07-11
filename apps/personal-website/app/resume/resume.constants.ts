@@ -7,6 +7,18 @@ import drouault from '../../public/experiences/drouault.png';
 import { Experience } from '../models/experience';
 import { Qualification } from '../models/qualification';
 import { Expertise } from '../models/expertise';
+import { JsonLdAuthor, JsonLdAuthorType } from '../_helpers/json-ld/json-ld.model';
+
+export const AUTHOR: JsonLdAuthor = {
+    avatar: "",
+    firstname: "Valentin",
+    lastname: "Bourreau",
+    type: JsonLdAuthorType.PERSON,
+    link: "https://valentinbourreau.com",
+    job: "Front-end Engineer",
+    description:
+        "Numerical resume version. Introduce personal expertises, experiences and qualifications"
+}
 
 export const EXPERIENCES: Array<Experience> = [
     {
