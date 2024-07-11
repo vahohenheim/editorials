@@ -8,6 +8,31 @@ export type JsonLdAuthor = {
     type?: JsonLdAuthorType;
 }
 
+export type JsonLdService = {
+    "@context"?: "https://schema.org",
+    "@type"?: "Service",
+    name: string;
+    description: string;
+    provider: JsonLdPerson | JsonLdOrganization;
+    areaServed: JsonLdPlace;
+    offers: JsonLdOffer;
+}
+
+export type JsonLdPlace = {
+    "@context"?: "https://schema.org",
+    "@type"?: "Place",
+    name: string;
+}
+
+export type JsonLdOffer = {
+  "@context"?: "https://schema.org",
+  "@type"?: "Offer",
+  price: string;
+  priceCurrency: string;
+  url: string;
+  priceValidUntil: string;
+}
+
 export enum JsonLdAuthorType {
     PERSON = 'Person',
     ORGANIZATION = 'Organization'
@@ -82,3 +107,30 @@ export type JsonLdInteractionCounter = {
     interactionType: 'https://schema.org/FollowAction' | 'https://schema.org/WriteAction' | 'https://schema.org/LikeAction';
     userInteractionCount: number;
 };
+
+export type JsonLdPortfolio = {
+    "@context"?: "https://schema.org",
+    "@type"?: "CreativeWork",
+    name: string;
+    creator: JsonLdPerson | JsonLdOrganization;
+    workExample: Array<JsonLdCreativeWork>;
+}
+
+export type JsonLdCreativeWork = {
+    "@type"?: "CreativeWork",
+    name: string;
+    url: string;
+    datePublished: string;
+    description: string;
+}
+
+export type JsonLdBlogPosting = {
+    "@context"?: "https://schema.org",
+    "@type"?: "BlogPosting",
+    headline: string;
+    image: Array<string>;
+    datePublished: string;
+    dateModified: string;
+    author: Array<JsonLdPerson | JsonLdOrganization>;
+    articleBody: string;
+}

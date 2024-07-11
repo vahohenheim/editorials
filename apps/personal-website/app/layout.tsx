@@ -22,12 +22,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
 					GeistSans.variable
 				)}
 			>
-				<BackgroundComponent>
-					<ScrollTopComponent />
-					<HeaderComponent />
-					{children}
-					<AnalyticsWrapper />
-				</BackgroundComponent>
+      <HeaderComponent />
+      {children}
+      <AnalyticsWrapper />
 			</body>
 		</html>
 	);

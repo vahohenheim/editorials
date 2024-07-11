@@ -1,4 +1,15 @@
-import { JsonLdBreadcrumbList, JsonLdListItem, JsonLdNewsArticle, JsonLdOrganization, JsonLdPerson, JsonLdProfilePage, JsonLdAuthor, JsonLdAuthorType, JsonLdBreadcrumbItem } from './json-ld.model';
+import {
+  JsonLdBreadcrumbList,
+  JsonLdListItem,
+  JsonLdNewsArticle,
+  JsonLdOrganization,
+  JsonLdPerson,
+  JsonLdProfilePage,
+  JsonLdAuthor,
+  JsonLdAuthorType,
+  JsonLdBreadcrumbItem,
+  JsonLdService, JsonLdCreativeWork, JsonLdPortfolio, JsonLdBlogPosting, JsonLdPlace, JsonLdOffer
+} from "./json-ld.model";
 
 export class JsonLdHelper {
     public static generateNewsArticle(
@@ -47,7 +58,7 @@ export class JsonLdHelper {
         };
     }
 
-    private static generateAuthor(author: JsonLdAuthor): JsonLdOrganization | JsonLdPerson {
+    public static generateAuthor(author: JsonLdAuthor): JsonLdOrganization | JsonLdPerson {
         switch (author.type) {
             case JsonLdAuthorType.ORGANIZATION:
                 return JsonLdHelper.generateOrganization(author);
@@ -89,4 +100,60 @@ export class JsonLdHelper {
             item: item.link
         };
     }
+
+    public static generateService(name: string, description: string, provider: JsonLdPerson | JsonLdOrganization, areaServed: JsonLdPlace, offers: JsonLdOffer): JsonLdService {
+        return {
+            '@context': 'https://schema.org',
+            '@type': 'Service',
+            name: name,
+            description: description,
+            provider: provider,
+            areaServed: areaServed,
+            offers: offers
+        };
+    }
+
+    public static generatePorfolio(creator: JsonLdAuthor, workExample: Array<JsonLdCreativeWork>): JsonLdPortfolio {
+        return {
+          "@context": "https://schema.org",
+          "@type": "CreativeWork",
+          "name": "Portfolio",
+          "creator": JsonLdHelper.generatePerson(creator),
+          "workExample": workExample
+        }
+    }
+
+
+    public static generateCreativeWork(name: string, url: string, datePublished: string, description: string): JsonLdCreativeWork {
+      return {
+        "@type": "CreativeWork",
+        "name": name,
+        "url": url,
+        "datePublished": datePublished,
+        "description": description
+      }
+    }
+
+    public static generateBlogPosting(headline: string, image: Array<string>, datePublished: string, dateModified: string, author: Array<JsonLdPerson | JsonLdOrganization>, articleBody: string): JsonLdBlogPosting {
+      return {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": headline,
+        "image": image,
+        "datePublished": datePublished,
+        "dateModified": dateModified,
+        "author": author,
+        "articleBody": articleBody
+      }
+    }
+
+  public static generatePortfolio(portfolio : JsonLdPortfolio): JsonLdPortfolio {
+    return {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      "name": portfolio.name,
+      "creator": portfolio.creator,
+      "workExample": portfolio.workExample
+    }
+  }
 }

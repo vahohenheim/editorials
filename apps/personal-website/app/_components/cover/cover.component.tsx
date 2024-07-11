@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./cover.module.css";
-import avatar from "../../../public/avatar.png";
 import valentinbourreau from "../../../public/valentinbourreau.svg";
 import { Button, HeadingComponent, HeadingTags } from "@editorials/ui/server";
 import { CoverAlignment, CoverComponentProps } from "./cover.model";
@@ -12,7 +11,8 @@ const CoverComponent = ({
 	description,
 	alignment = CoverAlignment.CENTER,
 	buttons,
-	socialNetworks
+	socialNetworks,
+  avatar
 }: CoverComponentProps) => {
 	const hasButtons = buttons && buttons.length > 0;
 	const hasSocialNetwork = socialNetworks && socialNetworks.length > 0;
@@ -29,7 +29,6 @@ const CoverComponent = ({
 				alt="valentin bourreau picture"
 				width={70}
 				height={70}
-				placeholder="blur"
 			/>
 			<Image
 				className={styles.logo}
@@ -50,7 +49,7 @@ const CoverComponent = ({
 					{hasButtons && (
 						<div className={styles.buttons}>
 							{buttons.map((button, index) => (
-								<Link key={index} href={button.link}>
+								<Link key={index} href={button.link} scroll={true}>
 									<Button
 										className={styles.button}
 										variant="outline"
