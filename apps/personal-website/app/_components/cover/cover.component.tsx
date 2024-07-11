@@ -30,14 +30,6 @@ const CoverComponent = ({
 				width={70}
 				height={70}
 			/>
-			<Image
-				className={styles.logo}
-				src={valentinbourreau}
-				alt="valentin bourreau logo"
-				width={162}
-				height={14}
-				priority
-			/>
 			<HeadingComponent tag={HeadingTags.H1} className="mt-0 mb-2">
 				{title}
 			</HeadingComponent>

@@ -17,8 +17,8 @@ export const HeadingComponent = ({
 				styles[apperance || tag],
 				"mb-2",
 				className
-			)
-		},
-		children
+			),
+      dangerouslySetInnerHTML: { __html: children }
+		}
 	);
 };

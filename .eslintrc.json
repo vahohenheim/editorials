@@ -2,7 +2,7 @@
   "root": true,
   "ignorePatterns": ["**/*"],
   "plugins": [
-    "@nx",     
+    "@nx",
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
