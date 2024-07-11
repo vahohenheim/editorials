@@ -3,6 +3,7 @@ import { ReactNode } from "react";
 export type CoverComponentProps = {
     title: string;
     description?: ReactNode;
+    avatar: string;
     alignment?: CoverAlignment;
     buttons?: Array<CoverButton>;
     socialNetworks?: Array<CoverSocialNetwork>;

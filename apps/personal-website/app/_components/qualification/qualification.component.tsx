@@ -1,7 +1,6 @@
 import Image from "next/image";
 import styles from "./qualification.module.css";
 import { QualificationComponentProps } from "./qualification.model";
-import qualificationIcon from "./../../../../public/qualification.svg";
 import {
 	Card,
 	CardDescription,
@@ -15,13 +14,6 @@ export const QualificationComponent = ({
 	return (
 		<Card>
 			<CardHeader className="flex flex-row items-center gap-2">
-				<Image
-					className={styles.title}
-					src={qualificationIcon}
-					alt={"Qualification icon"}
-					width={40}
-					height={40}
-				/>
 				<div>
 					<CardTitle>
 						{qualification.name} in {qualification.obtainDate}
