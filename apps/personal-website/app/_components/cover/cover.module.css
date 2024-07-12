@@ -1,9 +1,10 @@
 .cover {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
   text-align: center;
-  padding-top: 160px;
+  height: calc(100dvh - 3.5rem);
 }
 
 /* Mobile */
@@ -11,7 +12,6 @@
   .cover {
     align-items: flex-start;
     text-align: left;
-    padding-top: 100px;
   }
 }
 
@@ -55,4 +55,8 @@
   display: flex;
   align-items: center;
   gap: 16px;
+}
+
+.socialNetwork {
+  fill: hsl(var(--foreground));
 }

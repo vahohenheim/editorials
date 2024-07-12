@@ -80,3 +80,26 @@
     font-feature-settings: "rlig"1, "calt"1;
   }
 }
+
+h1, .h1 {
+  @apply text-4xl;
+}
+
+h2, .h2 {
+  @apply text-3xl;
+}
+
+h3, .h3 {
+  @apply text-2xl;
+}
+
+h4, .h4 {
+  @apply text-2xl;
+}
+
+@media (max-width: 900px) {
+  .container-mobile {
+    padding-left: 2rem;
+  }
+}
+

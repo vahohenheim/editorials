@@ -1,10 +1,34 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./cover.module.css";
-import valentinbourreau from "../../../public/valentinbourreau.svg";
 import { Button, HeadingComponent, HeadingTags } from "@editorials/ui/server";
-import { CoverAlignment, CoverComponentProps } from "./cover.model";
+import { CoverAlignment, CoverComponentProps, CoverSocialNetwork, CoverSocialNetworkType } from "./cover.model";
 import classnames from "classnames";
+import GithubIcon from "../icons/github";
+import { IconProps } from "../icons/icon.model";
+import DribbbleIcon from "../icons/dribbble";
+import BehanceIcon from "../icons/behance";
+import AppearComponent from "../appear/appear.component";
+
+const SocialNetwork = ({ socialNetwork }: { socialNetwork: CoverSocialNetwork }) => {
+  const defaultProps: IconProps = {
+    width: 20,
+    height: 20,
+    className: styles.socialNetwork
+  };
+
+  if (socialNetwork.type === CoverSocialNetworkType.GITHUB) {
+    return <GithubIcon {...defaultProps} />
+  }
+
+  if (socialNetwork.type === CoverSocialNetworkType.DRIBBBLE) {
+    return <DribbbleIcon {...defaultProps} />
+  }
+
+  if (socialNetwork.type === CoverSocialNetworkType.BEHANCE) {
+    return <BehanceIcon {...defaultProps} />
+  }
+};
 
 const CoverComponent = ({
 	title,
@@ -23,19 +47,26 @@ const CoverComponent = ({
 				[styles[alignment as string]]: alignment
 			})}
 		>
+      <AppearComponent>
 			<Image
 				className={styles.avatar}
 				src={avatar}
 				alt="valentin bourreau picture"
-				width={70}
-				height={70}
+				width={120}
+				height={120}
 			/>
-			<HeadingComponent tag={HeadingTags.H1} className="mt-0 mb-2">
-				{title}
-			</HeadingComponent>
+      </AppearComponent>
+      <AppearComponent delay={0.1}>
+        <HeadingComponent tag={HeadingTags.H1} className="mt-0 mb-2">
+          {title}
+        </HeadingComponent>
+      </AppearComponent>
+      <AppearComponent delay={0.2}>
 			{description && (
-				<p className="text-slate-600 mb-8">{description}</p>
+				<p className="text-slate-600 dark:text-slate-300 mb-8">{description}</p>
 			)}
+      </AppearComponent>
+      <AppearComponent delay={0.3}>
 			{hasActions && (
 				<div className={styles.actions}>
 					{hasButtons && (
@@ -56,18 +87,14 @@ const CoverComponent = ({
 						<div className={styles.socialNetworks}>
 							{socialNetworks.map((socialNetwork, index) => (
 								<Link key={index} href={socialNetwork.link}>
-									<Image
-										src={socialNetwork.src}
-										alt={socialNetwork.alt}
-										width={20}
-										height={20}
-									/>
+									<SocialNetwork socialNetwork={socialNetwork} />
 								</Link>
 							))}
 						</div>
 					)}
 				</div>
 			)}
+      </AppearComponent>
 		</div>
 	);
 };

@@ -6,15 +6,3 @@
   padding: 3px 2px;
   @apply font-extrabold;
 }
-
-.h1 {
-  @apply text-4xl;
-}
-
-.h2 {
-  @apply text-2xl;
-}
-
-.h3 {
-  @apply text-xl;
-}

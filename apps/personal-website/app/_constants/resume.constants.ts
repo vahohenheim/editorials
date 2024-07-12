@@ -113,11 +113,27 @@ export const QUALIFICATIONS: Array<Qualification>  = [
 
 export const EXPERTISES: Array<Expertise>  = [
     {
-        title: 'Jamstack propagandist',
+        title: 'Static generation propagandist',
         text: 'I work on this architecture from 4 years. The best improve is a static website run 150k static pages. I use mainly Next.js, and i ready to `app/` directory.'
     },
     {
+        title: 'Lead tech',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    },
+    {
         title: 'Design System manager',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    },
+    {
+        title: 'Engineer developer',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    },
+    {
+        title: 'Interface designer',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    },
+    {
+        title: 'Project management',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
     }
 ]

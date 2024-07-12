@@ -6,9 +6,13 @@
     /*backdrop-filter: saturate(180%) blur(20px);*/
     display: flex;
     align-items: center;
-    justify-content: flex-start;    
+    justify-content: flex-start;
 }
 
 .header > div {
     flex-grow: 1;
+}
+
+.logo {
+  fill: hsl(var(--foreground));
 }

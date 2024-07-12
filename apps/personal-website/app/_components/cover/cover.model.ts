@@ -15,9 +15,15 @@ export type CoverButton = {
 }
 
 export type CoverSocialNetwork = {
-    src: string;
+    type: CoverSocialNetworkType;
     alt: string;
     link: string;
+}
+
+export enum CoverSocialNetworkType {
+    GITHUB = 'github',
+    DRIBBBLE = 'dribbble',
+    BEHANCE = 'behance'
 }
 
 export enum CoverAlignment {

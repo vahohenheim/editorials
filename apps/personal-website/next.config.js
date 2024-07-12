@@ -19,7 +19,12 @@ const nextConfig = {
         hostname: 'avatars.githubusercontent.com',
       },
     ],
-  }
+  },
+  logging: {
+    fetches: {
+      fullUrl: true,
+    },
+  },
 };
 
 const plugins = [

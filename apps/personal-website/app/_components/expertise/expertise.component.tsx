@@ -1,8 +1,8 @@
 import {
-	Card,
-	CardDescription,
-	CardHeader,
-	CardTitle
+  Card, CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle
 } from "@editorials/ui/server";
 import { ExpertiseComponentProps } from "./expertise.model";
 
@@ -11,8 +11,11 @@ export const ExpertiseComponent = ({ expertise }: ExpertiseComponentProps) => {
 		<Card>
 			<CardHeader>
 				<CardTitle>{expertise.title}</CardTitle>
-				<CardDescription>{expertise.text}</CardDescription>
+				<CardDescription>{expertise.description}</CardDescription>
 			</CardHeader>
+      <CardContent>
+        {expertise.text}
+      </CardContent>
 		</Card>
 	);
 };

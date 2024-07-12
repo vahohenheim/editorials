@@ -11,7 +11,9 @@ export const SectionComponent = ({
 }) => {
 	return (
 		<section className={styles.section}>
-			<HeadingComponent tag={HeadingTags.H2} className="mb-4">{title}</HeadingComponent>
+      <div className="max-w-[900px] mx-auto w-full">
+        <HeadingComponent tag={HeadingTags.H2} className="mb-4">{title}</HeadingComponent>
+      </div>
 			<div className={styles.content}>{children}</div>
 		</section>
 	);

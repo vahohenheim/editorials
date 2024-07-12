@@ -1,5 +1,6 @@
 import { ReactNode } from "react"
 
 export type RootLayoutProps = {
-    children: ReactNode
+    children: ReactNode;
+    params: { lang?: 'en' | 'fr' };
 }

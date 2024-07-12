@@ -1,16 +1,11 @@
-'use client';
-
 import Image from "next/image";
-import valentinbourreau from "../../../public/valentinbourreau.svg";
 import styles from "./header.module.css";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@editorials/ui/server";
-import { useState } from "react";
 import Link from "next/link";
+import { ModeToggle } from "@editorials/ui";
+import LanguageToggleComponent from "../language-toggle/language-toggle.component";
+import LogoIcon from "../icons/logo";
 
-export const HeaderComponent = () => {
-  // TODO: get lang from cookie
-  const [lang, setLang] = useState("en");
-
+export const HeaderComponent = ({ lang = 'en' }: { lang?: 'en' | 'fr' }) => {
 
 	return (
     <header
@@ -18,26 +13,12 @@ export const HeaderComponent = () => {
       <div className="container flex h-14 justify-between items-center">
         <div>
           <Link href="/">
-            <Image
-              className={styles.logo}
-              src={valentinbourreau}
-              alt="valentin bourreau logo"
-              width={162}
-              height={14}
-              priority
-            />
+            <LogoIcon className={styles.logo} />
           </Link>
         </div>
-        <div>
-          <Select>
-            <SelectTrigger className="w-[180px]">
-              <SelectValue placeholder="Language" defaultValue={lang} />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="en">🏴󠁧󠁢󠁥󠁮󠁧󠁿 English</SelectItem>
-              <SelectItem value="fr">🇫🇷 Français</SelectItem>
-            </SelectContent>
-          </Select>
+        <div className="flex items-center gap-1">
+          <LanguageToggleComponent defaultLanguage={lang} />
+          <ModeToggle />
         </div>
       </div>
     </header>

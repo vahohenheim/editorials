@@ -2,3 +2,6 @@
 
 export * from './components/analytics/analytics';
 export * from './components/scroll-top/scroll-top';
+export * from './components/dropdown-menu/dropdown-menu';
+export * from './components/mode-toggle/mode-toggle';
+export * from './components/scroll-area/scroll-area';
