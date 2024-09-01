@@ -4,7 +4,6 @@
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  height: calc(100dvh - 3.5rem);
 }
 
 /* Mobile */
@@ -58,5 +57,5 @@
 }
 
 .socialNetwork {
-  fill: hsl(var(--foreground));
+  stroke: hsl(var(--foreground));
 }

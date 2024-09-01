@@ -1,5 +1,7 @@
 {
   "cover": {
-    "title": "Ingénieur front-end"
+    "ontitle": "salut, je suis <b>valentin</b> \uD83D\uDC4B",
+    "title": "un ingénieur front-end",
+    "summary": "passionné par la création de produits, d'expérience utilisateur et de collaboration.<br/>Je travaille majoritairement sur <b>React 18</b>, <b>Next.js 14</b> et <b>Angular 17</b>."
   }
 }

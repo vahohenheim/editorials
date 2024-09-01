@@ -7,7 +7,7 @@ const AppearComponent = ({ children, delay }: { children: React.ReactNode, delay
     <motion.div
       initial={{ opacity: 0, y: 5 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.2, type: "spring", stiffness: 150, delay }}
+      transition={{ duration: 0.1, type: "spring", stiffness: 50, delay }}
       viewport={{ once: true }}
     >
     {children}

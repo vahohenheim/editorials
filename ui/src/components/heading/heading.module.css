@@ -4,5 +4,5 @@
   white-space: pre-wrap;
   word-break: break-word;
   padding: 3px 2px;
-  @apply font-extrabold;
+  @apply font-bold;
 }

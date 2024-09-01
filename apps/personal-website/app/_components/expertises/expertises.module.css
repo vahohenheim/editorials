@@ -3,26 +3,9 @@
 }
 
 .grid {
-    @apply w-max;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 26px;
-    padding-left: calc((100vw - 900px) / 2);
-    padding-right: calc((100vw - 900px) / 2);
-}
-
-.grid > * {
-    flex-grow: 1;
-    flex-shrink: 0;
-    flex-basis: 350px;
-    max-width: 350px;
-}
-
-.grid > *:nth-child(0) {
-}
-
-.grid > *:last-child {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 36px;
 }
 
 /* Mobile */

@@ -5,4 +5,4 @@ const dictionaries = {
   fr: () => import('./../_dictionaries/fr.json').then((module) => module.default),
 }
 
-export const getDictionary = async (locale: 'fr' | 'en') => dictionaries[locale]()
+export const getDictionary = async (locale: 'fr' | 'en' = 'en') => Object.keys(dictionaries).includes(locale) ? await dictionaries[locale]() : null;

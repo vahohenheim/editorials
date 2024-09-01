@@ -13,4 +13,5 @@ export * from './components/link/link.model';
 export * from './components/scroll-top/scroll-top';
 export * from './components/select/select';
 export * from './components/skeleton/skeleton';
+export * from './components/navigation-menu/navigation-menu';
 export * from "./utils/cn"

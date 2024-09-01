@@ -1,0 +1,32 @@
+import { SocialNetworkType } from "../_models/social-network";
+
+export const SOCIAL_NETWORK_LINKS = {
+  [SocialNetworkType.LINKEDIN]: "https://www.linkedin.com/in/valentin-bourreau/",
+  [SocialNetworkType.GITHUB]: "https://github.com/vahohenheim",
+  [SocialNetworkType.DRIBBBLE]: "https://dribbble.com/valentinbourreau",
+  [SocialNetworkType.BEHANCE]: "https://www.behance.net/valentinbourreau",
+}
+
+
+export const SOCIAL_NETWORKS = [
+  {
+    type: SocialNetworkType.GITHUB,
+    alt: "github logo",
+    link: SOCIAL_NETWORK_LINKS[SocialNetworkType.GITHUB]
+  },
+  {
+    type: SocialNetworkType.DRIBBBLE,
+    alt: "dribbble logo",
+    link: SOCIAL_NETWORK_LINKS[SocialNetworkType.DRIBBBLE]
+  },
+  {
+    type: SocialNetworkType.BEHANCE,
+    alt: "behance logo",
+    link: SOCIAL_NETWORK_LINKS[SocialNetworkType.BEHANCE]
+  },
+  {
+    type: SocialNetworkType.LINKEDIN,
+    alt: "linkedin logo",
+    link: SOCIAL_NETWORK_LINKS[SocialNetworkType.LINKEDIN]
+  }
+]

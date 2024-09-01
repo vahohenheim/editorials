@@ -113,27 +113,15 @@ export const QUALIFICATIONS: Array<Qualification>  = [
 
 export const EXPERTISES: Array<Expertise>  = [
     {
-        title: 'Static generation propagandist',
-        text: 'I work on this architecture from 4 years. The best improve is a static website run 150k static pages. I use mainly Next.js, and i ready to `app/` directory.'
+        title: 'engineer developer',
+        text: 'search, create, develop, conceptualized architecture, documented, make REX, tests.<br/><br/>I work mainly on front-end part, but i make my studies in back-end developpement, and i reponse to some full-stack solutions today.'
     },
     {
-        title: 'Lead tech',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+        title: 'lead tech team',
+        text: 'create membership, united around a goal or work/research together to create common best practices.<br/><br/>It’s also about manage projects, budgets and cross-functional team leadership (dev, design, audience, acquisition, data analyst and engineer, product manager/owner)'
     },
     {
-        title: 'Design System manager',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-    },
-    {
-        title: 'Engineer developer',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-    },
-    {
-        title: 'Interface designer',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-    },
-    {
-        title: 'Project management',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+        title: 'UX conception',
+        text: 'whatever about it is, a new feature or team organization, user experience is everywere.<br/><br/>During my studies, i obtain a degree on design. I cotinue to use this experience to challenge my organization works with my team, and from my research.'
     }
 ]
