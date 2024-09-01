@@ -1,7 +1,32 @@
 {
+  "header": {
+    "menu": {
+      "resume": "curriculum vitae",
+      "retrospective": "rétrospectives",
+      "posts": "articles"
+    }
+  },
   "cover": {
-    "ontitle": "salut, je suis <b>valentin</b> \uD83D\uDC4B",
-    "title": "un ingénieur front-end",
+    "ontitle": "hello \uD83D\uDC4B je suis <b>valentin</b>,",
+    "title": "ingénieur front-end",
     "summary": "passionné par la création de produits, d'expérience utilisateur et de collaboration.<br/>Je travaille majoritairement sur <b>React 18</b>, <b>Next.js 14</b> et <b>Angular 17</b>."
+  },
+  "expertises": {
+    "title": "expertises",
+    "engineer-developer": {
+      "title": "engineer developer",
+      "text": "search, create, develop, conceptualized architecture, documented, make REX, tests.<br/><br/>I work mainly on front-end part, but i make my studies in back-end developpement, and i reponse to some full-stack solutions today."
+    },
+    "lead-tech-team": {
+      "title": "lead tech team",
+      "text": "create membership, united around a goal or work/research together to create common best practices.<br/><br/>It’s also about manage projects, budgets and cross-functional team leadership (dev, design, audience, acquisition, data analyst and engineer, product manager/owner)"
+    },
+    "ux-conception": {
+      "title": "UX conception",
+      "text": "whatever about it is, a new feature or team organization, user experience is everywere.<br/><br/>During my studies, i obtain a degree on design. I cotinue to use this experience to challenge my organization works with my team, and from my research."
+    }
+  },
+  "footer": {
+    "copyright": "Copyright © 2024. Tous droits réservés à valentin Bourreau."
   }
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./heading.module.css";
 import { HeadingComponentProps } from "./heading.model";
-import { cn } from "@editorials/ui/server";
+import classNames from "classnames";
 
 export const HeadingComponent = ({
 	tag,
@@ -12,9 +12,9 @@ export const HeadingComponent = ({
 	return React.createElement(
 		tag,
 		{
-			className: cn(
+			className: classNames(
 				styles.heading,
-				styles[apperance || tag],
+        apperance,
 				"mb-2",
 				className
 			),

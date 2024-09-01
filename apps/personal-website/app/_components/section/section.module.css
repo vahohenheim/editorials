@@ -1,9 +1,0 @@
-.section {
-    display: flex;
-    flex-direction: column;
-    margin: 150px auto;
-}
-
-.title {
-    margin-bottom: 26px;
-}

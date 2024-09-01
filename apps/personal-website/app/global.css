@@ -61,20 +61,36 @@
   }
 }
 
-h1, .h1 {
+h1 {
   @apply text-4xl;
 }
 
-h2, .h2 {
+.h1 {
+  @apply text-4xl !important;
+}
+
+h2 {
   @apply text-3xl;
 }
 
-h3, .h3 {
+.h2 {
+  @apply text-3xl !important;
+}
+
+h3 {
   @apply text-2xl;
 }
 
-h4, .h4 {
+.h3 {
+  @apply text-2xl !important;
+}
+
+h4 {
   @apply text-2xl;
+}
+
+.h4 {
+  @apply text-2xl !important;
 }
 
 .container {

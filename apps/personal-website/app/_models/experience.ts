@@ -1,11 +1,18 @@
-import { StaticImageData } from "next/image";
+import { Company } from "./company";
 
-export interface Experience {
-    tag?: string;
-    icon: StaticImageData;
-    job: string;
-    entreprise: string;
+export type Experience = {
+    company: Company;
     startDate: string;
     endDate: string;
-    text: string;
+    duration: string;
+    roles: Array<Role>;
 }
+
+export type Role = {
+  job: string;
+  startDate: string;
+  endDate: string;
+  duration: string;
+  content: string;
+}
+

@@ -1,5 +1,6 @@
 {
   "extends": [
+    "next/babel",
     "plugin:@nx/react-typescript",
     "eslint:recommended",
     "plugin:react/recommended",

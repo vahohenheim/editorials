@@ -1,8 +1,8 @@
 import { IconProps } from "../icons/icon.model";
-import GithubIcon from "../icons/github";
-import DribbbleIcon from "../icons/dribbble";
-import BehanceIcon from "../icons/behance";
-import LinkedinIcon from "../icons/linkedin";
+import GithubIcon from "../icons/social-networks/github";
+import DribbbleIcon from "../icons/social-networks/dribbble";
+import BehanceIcon from "../icons/social-networks/behance";
+import LinkedinIcon from "../icons/social-networks/linkedin";
 import { SocialNetworkType } from "../../_models/social-network";
 import { SocialNetworkComponentProps } from "./social-network.model";
 import Link from "next/link";

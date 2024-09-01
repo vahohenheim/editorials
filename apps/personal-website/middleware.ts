@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { match } from '@formatjs/intl-localematcher';
 import Negotiator from 'negotiator';
-import { DEFAULT_LOCALE, LOCALE_PATHS, LOCALES } from "./app/_constants/locale.constants";
+import { DEFAULT_LOCALE, LOCALE_PATHS, LOCALES } from "./app/_constants/locale";
 import { Locale } from "./app/_models/locale";
 
 const locales = LOCALES
@@ -33,6 +33,6 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    '/((?!_next).*)', // Skip all internal paths (_next)
+    '/((?!_next|favicon.ico|manifest.webmanifest|robots.txt|sitemap.xml|feed.xml).*)'
   ],
 }

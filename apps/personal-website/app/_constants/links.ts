@@ -4,3 +4,10 @@ export const MAIN_BUTTON = [
     link: "/resume"
   }
 ]
+
+export const RETURN_BUTTON = [
+  {
+    label: "back to homepage",
+    link: "/"
+  }
+]
