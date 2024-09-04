@@ -7,4 +7,4 @@ export const LOCALE_PATHS: Record<Locale, string> = {
   [Locale.FR]: 'fr'
 }
 
-export const DEFAULT_LOCALE = 'en';
+export const DEFAULT_LOCALE = Locale.EN;

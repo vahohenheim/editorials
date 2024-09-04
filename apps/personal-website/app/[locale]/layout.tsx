@@ -6,8 +6,6 @@ import { SOCIAL_NETWORKS } from "../_constants/social-network";
 import { AnalyticsWrapper } from "@editorials/ui/server";
 import { GeistSans } from "geist/font";
 import ThemeProvider from "../_components/theme-provider/theme-provider";
-import { getDictionary } from "./dictionaries";
-import { notFound } from "next/navigation";
 import classNames from "classnames";
 
 export async function generateStaticParams() {
@@ -15,12 +13,6 @@ export async function generateStaticParams() {
 }
 
 export default async function LocaleLayout({ children, params }: RootLayoutProps) {
-  const dict = await getDictionary(params.locale);
-
-  if (!dict) {
-    notFound();
-  }
-
   return (
     <html lang={params.locale} suppressHydrationWarning>
     <head>
@@ -44,8 +36,7 @@ export default async function LocaleLayout({ children, params }: RootLayoutProps
     >
       <HeaderComponent lang={params.locale} />
       {children}
-      <FooterComponent copyright={dict.footer.copyright}
-                       socialNetworks={SOCIAL_NETWORKS} />
+      <FooterComponent socialNetworks={SOCIAL_NETWORKS} />
       <AnalyticsWrapper />
     </ThemeProvider>
     </body>

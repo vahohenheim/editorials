@@ -12,10 +12,9 @@ const LanguageToggle = ({ defaultLanguage = 'en' }: { defaultLanguage?: 'en' | '
   const pathname = usePathname();
 
   const navigateToLanguage = (locale: 'en' | 'fr') => {
-    const path = LOCALE_PATHS[locale];
 
     if(defaultLanguage !== locale) {
-      const nextPath = pathname.replace(`/${defaultLanguage}`, `/${path}`);
+      const nextPath = pathname.replace(`/${defaultLanguage}`, `/${locale}`);
       router.push(nextPath);
     }
   }

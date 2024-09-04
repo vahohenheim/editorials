@@ -1,4 +1,4 @@
-{
+export default {
   "header": {
     "menu": {
       "resume": "curriculum vitae",
@@ -6,10 +6,14 @@
       "posts": "articles"
     }
   },
-  "cover": {
-    "ontitle": "hello \uD83D\uDC4B je suis <b>valentin</b>,",
-    "title": "ingénieur front-end",
-    "summary": "passionné par la création de produits, d'expérience utilisateur et de collaboration.<br/>Je travaille majoritairement sur <b>React 18</b>, <b>Next.js 14</b> et <b>Angular 17</b>."
+  "home": {
+    "ontitle": "hi \uD83D\uDC4B i’m <b>valentin</b>,",
+    "title": "a front-end engineer",
+    "summary": "started to be <b>engineering manager</b><br/>pationate by build products, user experiences, and collaborate.<br/>Mainly work on <b>React 18</b>, <b>Next.js 14</b> and <b>Angular 17</b>."
+  },
+  "resume": {
+    "title": "front-end engineer manager",
+    "summary": "Fort de plus de dix ans d’expérience dans le développement logiciel, j’ai affiné mes compétences à travers une grande variété de projets et de technologies. Au cours de l’année écoulée, j’ai endossé des rôles de leadership, guidant des équipes, gérant des projets et supervisant des budgets—des expériences qui ont éveillé ma passion pour les relations humaines et la collaboration. Aujourd’hui, je suis enthousiaste à l’idée d’évoluer vers un poste de Lead ou d’Engineering Manager, où je pourrai combiner mon expertise technique en développement frontend, backend, gestion de projet et design pour obtenir des résultats concrets et favoriser un environnement d’équipe innovant et dynamique. J’ai hâte de diriger, d’inspirer et de bâtir l’avenir ensemble."
   },
   "expertises": {
     "title": "expertises",
@@ -29,4 +33,4 @@
   "footer": {
     "copyright": "Copyright © 2024. Tous droits réservés à valentin Bourreau."
   }
-}
+} as const

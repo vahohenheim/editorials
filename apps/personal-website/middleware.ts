@@ -1,38 +1,16 @@
-import { NextRequest, NextResponse } from "next/server";
-import { match } from '@formatjs/intl-localematcher';
-import Negotiator from 'negotiator';
-import { DEFAULT_LOCALE, LOCALE_PATHS, LOCALES } from "./app/_constants/locale";
-import { Locale } from "./app/_models/locale";
+import { createI18nMiddleware } from 'next-international/middleware'
+import { NextRequest } from 'next/server'
+import { DEFAULT_LOCALE, LOCALES } from "./app/_constants/locale";
 
-const locales = LOCALES
-
-// Get the preferred locale, similar to the above or using a library
-function getLocale() {
-  let headers = { 'accept-language': 'en-US,en,fr;q=0.5' }
-  let languages = new Negotiator({ headers }).languages()
-  return match(languages, locales, DEFAULT_LOCALE) as 'fr' | 'en';
-}
-
-const hasLocale = (path: string) => Object.keys(LOCALE_PATHS).some(
-  (locale) => path.startsWith(`/${LOCALE_PATHS[locale as Locale]}/`) || path === `/${LOCALE_PATHS[locale as Locale]}`
-);
+const I18nMiddleware = createI18nMiddleware({
+  locales: LOCALES,
+  defaultLocale: DEFAULT_LOCALE,
+})
 
 export function middleware(request: NextRequest) {
-  // Check if there is any supported locale in the pathname
-  const { pathname } = request.nextUrl
-
-  if (hasLocale(pathname)) return
-
-  // Redirect if there is no locale
-  const locale = LOCALE_PATHS[getLocale()];
-  const path = pathname === '/' ? '' : pathname;
-
-  request.nextUrl.pathname = `/${locale}${path}`
-  return NextResponse.redirect(request.nextUrl)
+  return I18nMiddleware(request)
 }
 
 export const config = {
-  matcher: [
-    '/((?!_next|favicon.ico|manifest.webmanifest|robots.txt|sitemap.xml|feed.xml).*)'
-  ],
+  matcher: ['/((?!api|static|.*\\..*|_next|favicon.ico|robots.txt).*)']
 }

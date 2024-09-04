@@ -1,4 +1,4 @@
-{
+export default {
   "header": {
     "menu": {
       "resume": "resume",
@@ -6,10 +6,14 @@
       "posts": "posts"
     }
   },
-  "cover": {
+  "home": {
     "ontitle": "hi \uD83D\uDC4B i’m <b>valentin</b>,",
     "title": "a front-end engineer",
-    "summary": "pationate by build products, user experiences, and collaborate.<br/>Mainly work on <b>React 18</b>, <b>Next.js 14</b> and <b>Angular 17</b>."
+    "summary": "started to be <b>engineering manager</b><br/>pationate by build products, user experiences, and collaborate.<br/>Mainly work on <b>React 18</b>, <b>Next.js 14</b> and <b>Angular 17</b>."
+  },
+  "resume": {
+    "title": "front-end engineer manager",
+    "summary": "With over a decade of experience in software development, I’ve honed my skills across a wide array of projects and technologies. Over the past year, I’ve embraced leadership roles, guiding teams, managing projects, and overseeing budgets—experiences that have ignited my passion for people and collaboration. Now, I’m excited to evolve into a Lead or Engineering Manager position, where I can combine my technical expertise in frontend development, backend development, project management, and design to drive impactful results and foster a thriving, innovative team environment. I’m eager to lead, inspire, and build the future together."
   },
   "expertises": {
     "title": "Expertises",
@@ -29,4 +33,4 @@
   "footer": {
     "copyright": "Copyright © 2024. All right reserved valentin bourreau."
   }
-}
+} as const
