@@ -1,7 +1,5 @@
 export type PersonalProject = {
-  id: string;
-  title: string;
-  description: string;
+  id: PersonalProjectId;
   icon: string;
   status: PersonalProjectStatus;
   link?: string;
@@ -10,5 +8,12 @@ export type PersonalProject = {
 export enum PersonalProjectStatus {
   COMING_SOON = 'coming_soon',
   ACTIVE = 'active',
+  ARCHIVED = 'archived',
   COMPLETED = 'completed',
+}
+
+export enum PersonalProjectId {
+  EDITORIALS = "editorials",
+  NOTION_BLOG = "notion-blog",
+  FINANCE = "finance",
 }

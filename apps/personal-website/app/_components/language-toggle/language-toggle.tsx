@@ -5,7 +5,6 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import * as React from "react";
 import { usePathname, useRouter } from "next/navigation";
 import classnames from "classnames";
-import { LOCALE_PATHS } from "../../_constants/locale";
 
 const LanguageToggle = ({ defaultLanguage = 'en' }: { defaultLanguage?: 'en' | 'fr' }) => {
   const router = useRouter();

@@ -20,7 +20,7 @@ const Error = () => {
         <div className="mt-6">
           <Link href={'/'} scroll={true}>
             <Button>
-              Go to Homepage
+              go to homepage
             </Button>
           </Link>
         </div>

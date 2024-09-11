@@ -1,5 +1,5 @@
 import { Qualification } from '../_models/qualification';
-import { Expertise } from '../_models/expertise';
+import { Expertise, ExpertiseId } from "../_models/expertise";
 import { JsonLdAuthor, JsonLdAuthorType } from '../_helpers/json-ld/json-ld.model';
 
 export const AUTHOR: JsonLdAuthor = {
@@ -54,15 +54,12 @@ export const QUALIFICATIONS: Array<Qualification>  = [
 
 export const EXPERTISES: Array<Expertise>  = [
     {
-        title: 'engineer developer',
-        text: 'search, create, develop, conceptualized architecture, documented, make REX, tests.<br/><br/>I work mainly on front-end part, but i make my studies in back-end developpement, and i reponse to some full-stack solutions today.'
+        id: ExpertiseId.ENGINEER_DEVELOPER
     },
     {
-        title: 'lead tech team',
-        text: 'create membership, united around a goal or work/research together to create common best practices.<br/><br/>It’s also about manage projects, budgets and cross-functional team leadership (dev, design, audience, acquisition, data analyst and engineer, product manager/owner)'
+        id: ExpertiseId.LEAD_TECH_TEAM
     },
     {
-        title: 'UX conception',
-        text: 'whatever about it is, a new feature or team organization, user experience is everywere.<br/><br/>During my studies, i obtain a degree on design. I cotinue to use this experience to challenge my organization works with my team, and from my research.'
+        id: ExpertiseId.UX_CONCEPTION
     }
 ]

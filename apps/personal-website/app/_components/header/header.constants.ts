@@ -1,14 +1,22 @@
-export const HEADER_NAVIGATION_MENU_ITEMS = [
+
+export enum HeaderMenuItem {
+  RESUME = 'resume',
+  RETROSPECTIVES = 'retrospectives',
+  POSTS = 'posts'
+}
+
+
+export const HEADER_NAVIGATION_MENU_ITEMS: Array<{ id: HeaderMenuItem, href: string }> = [
   {
-    label: "resume",
+    id: HeaderMenuItem.RESUME,
     href: "/resume",
   },
   /*{
-    label: "retrospectives",
+    id: HeaderMenuItem.RETROSPECTIVES,
     href: "/retrospectives",
   },
   {
-    label: "posts",
+    id: HeaderMenuItem.POSTS,
     href: "/posts",
   },*/
 ];

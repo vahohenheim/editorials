@@ -1,4 +1,3 @@
-import Image from "next/image";
 import styles from "./header.module.css";
 import Link from "next/link";
 import { ModeToggle } from "@editorials/ui";
@@ -13,11 +12,14 @@ import {
 } from "@editorials/ui/server";
 import { HEADER_NAVIGATION_MENU_ITEMS } from "./header.constants";
 import AppearComponent from "../appear/appear";
+import { getScopedI18n } from "../../../locales/server";
 
-const HeaderComponent = ({ lang = 'en' }: { lang?: 'en' | 'fr' }) => {
-	return (
+const HeaderComponent = async ({ lang = 'en' }: { lang?: 'en' | 'fr' }) => {
+	const scopedT = await getScopedI18n('header');
+
+  return (
     <header
-      className="sticky top-0 z-50 w-full border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      className="sticky top-0 z-50 w-full border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/90">
       <AppearComponent>
         <div className="container-mobile mx-auto flex h-14 max-w-[900px] items-center justify-between">
         <div className="flex items-center gap-4">
@@ -30,7 +32,7 @@ const HeaderComponent = ({ lang = 'en' }: { lang?: 'en' | 'fr' }) => {
                 <NavigationMenuItem key={index}>
                   <Link href={item.href} legacyBehavior passHref>
                     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                      {item.label}
+                      {scopedT(`menu.${item.id}`)}
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>

@@ -1,10 +1,13 @@
 import classNames from "classnames";
 import { PersonalProject, PersonalProjectStatus } from "../../_models/personal-project";
-import { Badge } from "@editorials/ui/server";
 import Link from "next/link";
+import BadgePersonalProjectComponent from "./badge";
+import { getScopedI18n } from "../../../locales/server";
 
-const PersonalProjectComponent = ({ project }: { project: PersonalProject }) => {
-    return (
+const PersonalProjectComponent = async ({ project }: { project: PersonalProject }) => {
+  const scopedT = await getScopedI18n('personal-projects.list');
+
+  return (
       <Link key={project.id} href={project.link || "#"} scroll={true}>
         <div
           key={project.id}
@@ -15,33 +18,16 @@ const PersonalProjectComponent = ({ project }: { project: PersonalProject }) => 
               {project.icon}
             </p>
             <div>
-              {project.status === PersonalProjectStatus.COMING_SOON &&
-                <Badge variant="outline">coming soon</Badge>}
-              {project.status === PersonalProjectStatus.ACTIVE && <Badge variant="outline" className="gap-1.5">
-                <svg
-                  width="9"
-                  height="9"
-                  viewBox="0 0 6 6"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="flex-grow-0 flex-shrink-0"
-                  preserveAspectRatio="none"
-                >
-                  <circle cx="3" cy="3" r="3" fill="#4F7EFF"></circle>
-                </svg>
-                active
-              </Badge>}
-
+              <BadgePersonalProjectComponent status={project.status} />
             </div>
           </div>
-
           <p
             className={classNames("w-full text-xl font-bold text-semibold", { ["opacity-60"]: project.status === PersonalProjectStatus.COMING_SOON })}>
-            {project.title}
+            {scopedT(`${project.id}.title`)}
           </p>
           <p
             className={classNames("text-sm text-slate-600 dark:text-slate-300", { ["opacity-60"]: project.status === PersonalProjectStatus.COMING_SOON })}>
-            {project.description}
+            {scopedT(`${project.id}.description`)}
           </p>
         </div>
       </Link>

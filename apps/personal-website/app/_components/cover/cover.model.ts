@@ -7,7 +7,7 @@ export type CoverComponentProps = {
     description?: ReactNode;
     avatar: string;
     alignment?: CoverAlignment;
-    buttons?: Array<CoverButton>;
+    action: CoverButton
     socialNetworks?: Array<SocialNetwork>;
 }
 

@@ -14,13 +14,10 @@ const CoverComponent = ({
   title,
   description,
   alignment = CoverAlignment.LEFT,
-  buttons,
-  socialNetworks,
+  action,
+  socialNetworks = [],
   avatar
 }: CoverComponentProps) => {
-  const hasButtons = buttons && buttons.length > 0;
-  const hasSocialNetwork = socialNetworks && socialNetworks.length > 0;
-  const hasActions = hasButtons || hasSocialNetwork;
   return (
     <SectionComponent>
       <div
@@ -55,31 +52,24 @@ const CoverComponent = ({
           </AppearComponent>
         )}
         <AppearComponent delay={0.4}>
-          {hasActions && (
-            <div className={classNames(styles.actions, "mt-4")}>
-              {hasButtons && (
-                <div className={styles.buttons}>
-                  {buttons.map((button, index) => (
-                    <Link key={index} href={button.link} scroll={true}>
-                      <Button
-                        className={styles.button}
-                        variant="default"
-                      >
-                        {button.label}
-                      </Button>
-                    </Link>
-                  ))}
-                </div>
-              )}
-              {hasSocialNetwork && (
-                <NavigationMenu>
-                  <NavigationMenuList>
-                    {socialNetworks.map((socialNetwork, index) => <SocialNetworkComponent key={index} socialNetwork={socialNetwork} />)}
-                  </NavigationMenuList>
-                </NavigationMenu>
-              )}
+          <div className={classNames(styles.actions, "mt-4")}>
+            <div className={styles.buttons}>
+              <Link href={action.link} scroll={true}>
+                <Button
+                  className={styles.button}
+                  variant="default"
+                >
+                  {action.label}
+                </Button>
+              </Link>
             </div>
-          )}
+            <NavigationMenu>
+              <NavigationMenuList>
+                {socialNetworks.map((socialNetwork, index) => <SocialNetworkComponent key={index}
+                                                                                      socialNetwork={socialNetwork} />)}
+              </NavigationMenuList>
+            </NavigationMenu>
+          </div>
         </AppearComponent>
       </div>
     </SectionComponent>

@@ -1,14 +1,16 @@
 import { Expertise } from "../expertise/expertise"
 import SectionComponent from "../section/section"
-import { ExpertisesComponentProps } from "./expertises.model"
 import styles from './expertises.module.css';
+import { EXPERTISES } from "../../_constants/resume";
 
-export const Expertises = ({ title, expertises }: ExpertisesComponentProps) => {
+const ExpertisesComponent = async () => {
     return (
         <SectionComponent>
           <div className={styles.grid}>
-            {expertises.map((expertise, index) => <Expertise key={index} expertise={expertise} />)}
+            {EXPERTISES.map((expertise, index) => <Expertise key={index} expertise={expertise} />)}
           </div>
         </SectionComponent>
     )
 }
+
+export default ExpertisesComponent;

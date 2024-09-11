@@ -26,7 +26,7 @@ const NotFound = () => {
           <div className="mt-6">
             <Link href={'/'} scroll={true}>
               <Button variant="default">
-                Go to Homepage
+                go to homepage
               </Button>
             </Link>
           </div>
