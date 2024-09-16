@@ -10,11 +10,11 @@ import { USER_LANGUAGES } from "../../_constants/languages";
 import { getScopedI18n } from "../../../locales/server";
 import ExpertisesComponent from "../../_components/expertises/expertises";
 import { Metadata } from "next";
-import { RESUME_METADATA } from "./metadata";
 import { QUALIFICATIONS } from "../../_constants/qualifications";
+import { MetadataHelpers } from "../../_helpers/metadata";
 
-export function generateMetadata({ params: { locale = 'en' } }: { params: { locale: 'en' | 'fr' } }): Metadata {
-  return { ...RESUME_METADATA, openGraph: { ...RESUME_METADATA.openGraph, locale: locale === "en" ? "en_US" : "fr_FR" } }
+export async function generateMetadata({ params: { locale = 'en' } }: { params: { locale: 'en' | 'fr' } }): Promise<Metadata> {
+  return await MetadataHelpers.translateResume(locale)
 }
 
 const ResumePage = async ({ params: { locale = 'en' } }: { params: { locale: 'en' | 'fr' } }) => {

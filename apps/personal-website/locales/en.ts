@@ -1,4 +1,8 @@
 export default {
+  "metadata": {
+    "title": "Senior Front-end Engineer | valentin bourreau",
+    "description": "Senior front-end engineer with over a decade of experience in software and web development. Pationate by build products, user experiences, and team management. Mainly work on React 18, Next.js 14 and Angular 17. Paris, France",
+  },
   "header": {
     "menu": {
       "resume": "resume",
@@ -15,7 +19,11 @@ export default {
   "resume": {
     "title": "front-end engineer senior",
     "summary": "With over a decade of experience in software and web development, I’ve honed my skills across a wide array of projects and technologies. Since a year and a half, I’ve embraced leadership roles, guiding teams, managing projects, and overseeing budgets—experiences that have ignited my passion for people and collaboration.<br/><br/>➡️ Now, I’m excited to evolve into a Lead tech or Engineering Manager position, where I can combine my technical expertise in frontend development, backend development, project management, and design to improve team velocity and foster a thriving, innovative team environment.<br/><br/>🌱 I bootstrap a lot of start-up product with latest versions of frameworks or migrate existing project. Today, i want to learn more about scale-up product.",
-    "cta": "back to homepage"
+    "cta": "back to homepage",
+    "metadata": {
+      "title": "Resume | valentin bourreau",
+      "description": "Resume of senior front-end engineer with over a decade of experience in software and web development. Pationate by build products, user experiences, and team management. Mainly work on React 18, Next.js 14 and Angular 17. Paris, France"
+    },
   },
   "personal-projects": {
     "title": "latest personal projects",

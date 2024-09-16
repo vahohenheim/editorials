@@ -1,11 +1,7 @@
 export const RESUME_METADATA = {
-  title: "Front-end engineer senior",
-  description: "Valentin Bourreau personal website",
   openGraph: {
     type: "website",
     url: "https://valentinbourreau.com",
-    title: "Front-end engineer senior",
-    description: "Valentin Bourreau personal website",
     images: [
       {
         url: "https://avatars.githubusercontent.com/u/15048034?s=400&u=496078e2a68aaa3ea7e53c8eb2de313bed528b65&v=4",

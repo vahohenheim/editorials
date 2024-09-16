@@ -10,13 +10,13 @@ import { Metadata } from "next";
 import { COMPANIES } from "../_constants/companies";
 import PersonalProjectsComponent from "../_components/personal-projects/personal-projects";
 import { getScopedI18n } from "../../locales/server";
-import { HOME_METADATA } from "./metadata";
+import { MetadataHelpers } from "../_helpers/metadata";
 
-export function generateMetadata({ params: { locale = 'en' } }: { params: { locale: 'en' | 'fr' } }): Metadata {
-  return { ...HOME_METADATA, openGraph: { ...HOME_METADATA.openGraph, locale: locale === "en" ? "en_US" : "fr_FR" } }
+export async function generateMetadata({ params: { locale = 'en' } }: { params: { locale: 'en' | 'fr' } }): Promise<Metadata> {
+  return await MetadataHelpers.translateHomepage(locale)
 }
 
-const HomePage = async ({ params: { locale = 'en' } }: { params: { locale: 'en' | 'fr' } }) => {
+const HomePage = async () => {
   const scopedT = await getScopedI18n('home')
 
 	return (

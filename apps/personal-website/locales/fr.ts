@@ -1,4 +1,8 @@
 export default {
+  "metadata": {
+    "title": "Ingénieur front-end sénior | valentin bourreau",
+    "description": "Ingénieur front-end senior avec plus de 10 ans d'expérience dans le développement logiciel et web. Pationé par la création de produit, l’experience utilisateur et la gestion d’équipe. Je travaille principalement sur React 18, Next.js 14 et Angular 17. Paris, France",
+  },
   "header": {
     "menu": {
       "resume": "curriculum vitae",
@@ -15,7 +19,11 @@ export default {
   "resume": {
     "title": "ingénieur front-end senior",
     "summary": "Après 11 ans dans le development logiciel et web, j’ai pu aiguisé mes compétences sur divers projets et languages. Depuis 1 ans et demi, j’ai embrassé le rôle de lead, guidé une équipe de 5 développeur, gérer des projets et suivre les budgets. Cette experience m’a permit de faire évoluer ma passion pour les gens et la collaboration.<br/><br/>➡️ Maintenant, je suis opérationnel sur ce rôle et à m’améliorer en tant qu’Engineering Manager. Je vais pouvoir y combiner mes expertises techniques dans le développement Front-end et Back-end, la gestion de projet et le design pour améliorer la vélocité de l’équipe et favoriser un environnement d’équipe prospère et innovant.<br/><br/>🌱 J’ai démarrer beaucoup de produit de diverses start-ups avec les dernières versions des framework ou migrer des produits existants. Maintenant, je veux en apprendre plus sur des produits passant à une mise en échelle supérieure.",
-    "cta": "retour à la page d’accueil"
+    "cta": "retour à la page d’accueil",
+    "metadata": {
+      "title": "Curriculum Vitae | valentin bourreau",
+      "description": "Curriculum vitae d'un ingénieur front-end senior avec plus de 10 ans d'expérience dans le développement logiciel et web. Pationé par la création de produit, l’experience utilisateur et la gestion d’équipe. Je travaille principalement sur React 18, Next.js 14 et Angular 17. Paris, France"
+    },
   },
   "expertises": {
     "list": {
