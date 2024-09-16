@@ -12,12 +12,15 @@ import ExpertisesComponent from "../../_components/expertises/expertises";
 import { Metadata } from "next";
 import { QUALIFICATIONS } from "../../_constants/qualifications";
 import { MetadataHelpers } from "../../_helpers/metadata";
+import { setStaticParamsLocale } from "next-international/server";
 
 export async function generateMetadata({ params: { locale = 'en' } }: { params: { locale: 'en' | 'fr' } }): Promise<Metadata> {
+  setStaticParamsLocale(locale)
   return await MetadataHelpers.translateResume(locale)
 }
 
 const ResumePage = async ({ params: { locale = 'en' } }: { params: { locale: 'en' | 'fr' } }) => {
+  setStaticParamsLocale(locale)
   const scopedT = await getScopedI18n('resume')
 
   return (
