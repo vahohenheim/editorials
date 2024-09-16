@@ -2,14 +2,7 @@
   "root": true,
   "ignorePatterns": ["**/*"],
   "plugins": [
-    "@nx",     
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:react/jsx-runtime",
-    "plugin:tailwindcss/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "next/core-web-vitals",
-    "prettier"
+    "@nx"
   ],
   "overrides": [
     {

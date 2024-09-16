@@ -1,22 +1,20 @@
 import { ReactNode } from "react";
+import { SocialNetwork } from "../../_models/social-network";
 
 export type CoverComponentProps = {
+    ontitle?: string;
     title: string;
     description?: ReactNode;
+    avatar: string;
     alignment?: CoverAlignment;
-    buttons?: Array<CoverButton>;
-    socialNetworks?: Array<CoverSocialNetwork>;
+    action: CoverButton
+    socialNetworks?: Array<SocialNetwork>;
 }
 
 export type CoverButton = {
     label: string;
     link: string;
-}
-
-export type CoverSocialNetwork = {
-    src: string;
-    alt: string;
-    link: string;
+    variant?: 'default' | 'outline';
 }
 
 export enum CoverAlignment {
