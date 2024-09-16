@@ -11,12 +11,15 @@ import { COMPANIES } from "../_constants/companies";
 import PersonalProjectsComponent from "../_components/personal-projects/personal-projects";
 import { getScopedI18n } from "../../locales/server";
 import { MetadataHelpers } from "../_helpers/metadata";
+import { setStaticParamsLocale } from "next-international/server";
 
 export async function generateMetadata({ params: { locale = 'en' } }: { params: { locale: 'en' | 'fr' } }): Promise<Metadata> {
+  setStaticParamsLocale(locale)
   return await MetadataHelpers.translateHomepage(locale)
 }
 
-const HomePage = async () => {
+const HomePage = async ({ params: { locale = 'en' } }: { params: { locale: 'en' | 'fr' } }) => {
+  setStaticParamsLocale(locale)
   const scopedT = await getScopedI18n('home')
 
 	return (
