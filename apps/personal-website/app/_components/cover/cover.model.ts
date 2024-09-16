@@ -14,6 +14,7 @@ export type CoverComponentProps = {
 export type CoverButton = {
     label: string;
     link: string;
+    variant?: 'default' | 'outline';
 }
 
 export enum CoverAlignment {

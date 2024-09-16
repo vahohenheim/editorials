@@ -2,7 +2,7 @@ import "../global.css";
 import { RootLayoutProps } from "@editorials/next/server";
 import HeaderComponent from "../_components/header/header";
 import FooterComponent from "../_components/footer/footer";
-import { SOCIAL_NETWORKS } from "../_constants/social-network";
+import { MAIL_LINK, SOCIAL_NETWORKS } from "../_constants/social-network";
 import { AnalyticsWrapper } from "@editorials/ui/server";
 import { GeistSans } from "geist/font";
 import ThemeProvider from "../_components/theme-provider/theme-provider";
@@ -36,7 +36,7 @@ export default async function LocaleLayout({ children, params }: RootLayoutProps
     >
       <HeaderComponent lang={params.locale} />
       {children}
-      <FooterComponent socialNetworks={SOCIAL_NETWORKS} />
+      <FooterComponent socialNetworks={[ MAIL_LINK, ...SOCIAL_NETWORKS ]} />
       <AnalyticsWrapper />
     </ThemeProvider>
     </body>

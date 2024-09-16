@@ -30,10 +30,11 @@ const HomePage = async ({ params: { locale = 'en' } }: { params: { locale: 'en' 
         avatar="https://avatars.githubusercontent.com/u/15048034?s=400&u=496078e2a68aaa3ea7e53c8eb2de313bed528b65&v=4"
         action={{
           label: scopedT('cta'),
-          link: "/resume"
+          link: "mailto:contact@valentinbourreau.com",
+          variant: "default"
         }}
         socialNetworks={SOCIAL_NETWORKS}
-        alignment={CoverAlignment.LEFT}
+        alignment={CoverAlignment.CENTER}
       />
       <AppearComponent delay={0.6}>
         <CompaniesComponent companies={Object.values(COMPANIES)} />

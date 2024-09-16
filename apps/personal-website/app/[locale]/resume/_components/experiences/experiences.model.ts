@@ -1,6 +1,6 @@
 import { Experience } from "../../../../_models/experience";
 
 export interface ExperiencesComponentProps {
-    title: string;
+    lang: 'fr' | 'en';
     experiences: Array<Experience>;
 }

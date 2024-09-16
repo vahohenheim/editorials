@@ -57,7 +57,7 @@ const CoverComponent = ({
               <Link href={action.link} scroll={true}>
                 <Button
                   className={styles.button}
-                  variant="default"
+                  variant={action.variant || "default"}
                 >
                   {action.label}
                 </Button>

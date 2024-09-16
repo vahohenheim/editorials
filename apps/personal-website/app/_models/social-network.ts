@@ -5,6 +5,7 @@ export type SocialNetwork = {
 }
 
 export enum SocialNetworkType {
+  MAIL = 'MAIL',
   LINKEDIN = 'LINKEDIN',
   GITHUB = 'GITHUB',
   DRIBBBLE = 'DRIBBBLE',

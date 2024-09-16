@@ -9,6 +9,7 @@ import Link from "next/link";
 import { NavigationMenuItem, NavigationMenuLink, navigationMenuTriggerStyle } from "@editorials/ui/server";
 import classNames from "classnames";
 import styles from "./social-network.module.css";
+import { MailIcon } from "lucide-react";
 
 const SocialNetworkIconComponent = ({ socialNetwork }: SocialNetworkComponentProps) => {
   const defaultProps: IconProps = {
@@ -16,6 +17,10 @@ const SocialNetworkIconComponent = ({ socialNetwork }: SocialNetworkComponentPro
     height: 20,
     className: styles.socialNetwork
   };
+
+  if (socialNetwork.type === SocialNetworkType.MAIL) {
+    return <MailIcon {...defaultProps} />
+  }
 
   if (socialNetwork.type === SocialNetworkType.GITHUB) {
     return <GithubIcon {...defaultProps} />
@@ -37,11 +42,9 @@ const SocialNetworkIconComponent = ({ socialNetwork }: SocialNetworkComponentPro
 const SocialNetworkComponent = ({ socialNetwork }: SocialNetworkComponentProps) => {
   return (
     <NavigationMenuItem>
-      <Link href={socialNetwork.link} legacyBehavior passHref target="_blank">
-        <NavigationMenuLink className={classNames(navigationMenuTriggerStyle(), styles.link)}>
-          <SocialNetworkIconComponent socialNetwork={socialNetwork} />
-        </NavigationMenuLink>
-      </Link>
+      <NavigationMenuLink className={classNames(navigationMenuTriggerStyle(), styles.link)} href={socialNetwork.link}>
+        <SocialNetworkIconComponent socialNetwork={socialNetwork} />
+      </NavigationMenuLink>
     </NavigationMenuItem>
   )
 };

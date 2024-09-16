@@ -3,8 +3,8 @@ import { CompanyId, Company } from "../../_models/company";
 import CompanyIconComponent from "../company-icon/company-icon";
 
 const CompanyComponent = ({ company }: { company: Company }) => {
-  return <Link href={company.url} legacyBehavior passHref target="_blank">
-    <CompanyIconComponent company={company} className="shrink-0 fill-gray-500 cursor-pointer" />
+  return <Link href={company.url} target="_blank">
+    <CompanyIconComponent company={company} className="shrink-0 fill-gray-500 dark:fill-gray-400 cursor-pointer" />
   </Link>
 }
 

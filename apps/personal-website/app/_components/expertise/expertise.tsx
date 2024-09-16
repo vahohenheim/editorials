@@ -12,10 +12,13 @@ export const Expertise = async ({ expertise }: ExpertiseComponentProps) => {
 
   return (
     <div>
+      <p className="text-base font-semibold text-slate-600 dark:text-slate-300"
+         dangerouslySetInnerHTML={{ __html: scopedT(`${expertise.id}.label`) }} />
       <HeadingComponent tag={HeadingTags.H2} apperance={HeadingTags.H3} className="mb-0">
         {scopedT(`${expertise.id}.title`)}
       </HeadingComponent>
-      <p className="text-slate-600 dark:text-slate-300" dangerouslySetInnerHTML={{ __html: scopedT(`${expertise.id}.text`) }} />
+      <p className="text-slate-600 dark:text-slate-300"
+         dangerouslySetInnerHTML={{ __html: scopedT(`${expertise.id}.text`) }} />
     </div>
-	);
+  );
 };

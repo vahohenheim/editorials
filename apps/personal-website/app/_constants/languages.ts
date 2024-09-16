@@ -1,21 +1,32 @@
-import { Language, LanguageLevel } from "../_models/language";
+import { Language, LanguageId, LanguageLevel, LanguageUser } from "../_models/language";
 
-const LANGUAGES: Array<Language> = [
+export const LANGUAGES: Record<LanguageId, Language> = {
+  [LanguageId.FR]: {
+    icon: "🇫🇷",
+    id: LanguageId.FR
+  },
+  [LanguageId.EN]: {
+    icon: "🇬🇧",
+    id: LanguageId.EN
+  },
+  [LanguageId.ES]: {
+    icon: "🇪🇸",
+    id: LanguageId.ES
+  }
+};
+
+export const USER_LANGUAGES: Array<LanguageUser> = [
 	{
-		icon: "🇫🇷",
-		name: "Français",
+    id: LanguageId.FR,
 		level: LanguageLevel.NATIVE
 	},
 	{
-		icon: "🇬🇧",
-		name: "Anglais",
+    id: LanguageId.EN,
 		level: LanguageLevel.PROGRESSION
 	},
 	{
-		icon: "🇪🇸",
-		name: "Espagnol",
+    id: LanguageId.ES,
 		level: LanguageLevel.NOTION
 	}
 ];
 
-export default LANGUAGES;
