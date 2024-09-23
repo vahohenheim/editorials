@@ -6,6 +6,7 @@ import { getScopedI18n } from "../../../../../locales/server";
 import dayjs from "dayjs";
 import { formatDateDifference } from "apps/personal-website/app/_utils/format-date-difference";
 
+
 const ExperienceComponent = async ({
   lang,
 	experience
@@ -13,21 +14,23 @@ const ExperienceComponent = async ({
   const companyScopedT = await getScopedI18n(`companies.list.${experience.company.id}`);
 
 	return (
-    <div className="flex flex-col justify-start items-start self-stretch flex-grow-0 flex-shrink-0 gap-8">
+    <div className="flex flex-col justify-start items-start self-stretch flex-grow-0 flex-shrink-0 gap-8 [&:not(:last-child)]:border-b-2 pb-10">
       <div
         className="flex flex-col justify-start items-start self-stretch flex-grow-0 flex-shrink-0 relative gap-1">
-        <CompanyIconComponent company={experience.company} className="shrink-0 fill-gray-700 dark:fill-gray-300 cursor-pointer mb-2" height={40}/>
+        <div className="shrink-0 mb-2 bg-gray-100 dark:bg-gray-800 rounded-md px-3 py-2">
+          <CompanyIconComponent company={experience.company} className="fill-gray-700 dark:fill-gray-300" height={40}/>
+        </div>
         <p className="self-stretch flex-grow-0 flex-shrink-0 text-2xl">
-            <span className="self-stretch flex-grow-0 flex-shrink-0 text-2xl font-bold">
-              {companyScopedT('name')}
-            </span>
+          <span className="self-stretch flex-grow-0 flex-shrink-0 text-2xl font-bold">
+            {companyScopedT('name')}
+          </span>
           <span className="self-stretch flex-grow-0 flex-shrink-0 text-2xl">
               , {experience.company.location}
             </span>
         </p>
         <p
           className="self-stretch flex-grow-0 flex-shrink-0 text-base font-semibold">
-          <DurationComponent startDate={dayjs(experience.startDate).format('MMMM YYYY')} endDate={dayjs(experience.endDate).format('MMMM YYYY')} duration={formatDateDifference(dayjs(experience.startDate), dayjs(experience.endDate), lang)} />
+          <DurationComponent startDate={dayjs(experience.startDate).locale(lang).format('MMMM YYYY')} endDate={dayjs(experience.endDate).locale(lang).format('MMMM YYYY')} duration={formatDateDifference(dayjs(experience.startDate), dayjs(experience.endDate), lang)} />
         </p>
       </div>
       <div className="flex flex-col justify-start items-start self-stretch flex-grow-0 flex-shrink-0 gap-6">

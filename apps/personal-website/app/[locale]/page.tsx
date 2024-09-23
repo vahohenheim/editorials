@@ -39,10 +39,10 @@ const HomePage = async ({ params: { locale = 'en' } }: { params: { locale: 'en' 
         socialNetworks={SOCIAL_NETWORKS}
         alignment={CoverAlignment.CENTER}
       />
-      <AppearComponent delay={0.6}>
+      <AppearComponent delay={0.4}>
         <CompaniesComponent companies={Object.values(COMPANIES)} />
       </AppearComponent>
-      <AppearComponent delay={0.3}>
+      <AppearComponent delay={0.5}>
         <ExpertisesComponent />
       </AppearComponent>
       <AppearComponent delay={0.3}>

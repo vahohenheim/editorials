@@ -1,10 +1,10 @@
 export const HOME_METADATA = {
-  title: "Front-end engineer senior",
+  title: "Senior front-end engineer",
   description: "Valentin Bourreau personal website to introduce my articles, works and resume.",
   openGraph: {
     type: "website",
     url: "https://valentinbourreau.com",
-    title: "Front-end engineer senior",
+    title: "Senior front-end engineer",
     description: "Valentin Bourreau personal website to introduce my articles, works and resume.",
     images: [
       {

@@ -35,18 +35,18 @@ const CoverComponent = ({
           />
         </AppearComponent>
         {ontitle && (
-          <AppearComponent delay={0.2}>
+          <AppearComponent delay={0.1}>
             <p className="mb-0 text-xl text-slate-800 dark:text-slate-200"
                dangerouslySetInnerHTML={{ __html: ontitle }} />
           </AppearComponent>
         )}
-        <AppearComponent delay={0.3}>
+        <AppearComponent delay={0.2}>
           <HeadingComponent tag={HeadingTags.H1} className="my-0">
             {title}
           </HeadingComponent>
         </AppearComponent>
         {description && (
-          <AppearComponent delay={0.4}>
+          <AppearComponent delay={0.3}>
             <p className="text-slate-600 dark:text-slate-300"
                dangerouslySetInnerHTML={{ __html: description }} />
           </AppearComponent>
