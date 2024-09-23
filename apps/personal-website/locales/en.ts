@@ -17,7 +17,7 @@ export default {
     "cta": "contact me"
   },
   "resume": {
-    "title": "front-end engineer senior",
+    "title": "senior front-end engineer",
     "summary": "With over a decade of experience in software and web development, I’ve honed my skills across a wide array of projects and technologies. Since a year and a half, I’ve embraced leadership roles, guiding teams, managing projects, and overseeing budgets—experiences that have ignited my passion for people and collaboration.<br/><br/>➡️ Now, I’m excited to evolve into a Lead tech or Engineering Manager position, where I can combine my technical expertise in frontend development, backend development, project management, and design to improve team velocity and foster a thriving, innovative team environment.<br/><br/>🌱 I bootstrap a lot of start-up product with latest versions of frameworks or migrate existing project. Today, i want to learn more about scale-up product.",
     "cta": "back to homepage",
     "metadata": {
@@ -131,6 +131,16 @@ export default {
         content: "Integration within the IS of an industrial company:<br/>· Computer network maintenance (Windows Server 2003).<br/>· Computer development (ERP Silog, Crystal Reports, SQL Server, VB Basic).<br/>· User assistance."
       }
       }
+  },
+  "roles": {
+    "front-end-lead":  "lead tech front-end",
+    "front-end-engineer": "front-end engineer",
+    "front-end-developer": "front-end developer",
+    "full-stack-developer": "full-stack developer",
+    "ui-ux-designer": "UI/UX Designer",
+    "software-developer": "software developer",
+    "help-desk": "help desk",
+    "teacher": "teacher"
   },
   "qualifications": {
     "title": "qualifications",

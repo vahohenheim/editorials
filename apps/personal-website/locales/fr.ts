@@ -1,7 +1,7 @@
 export default {
   "metadata": {
     "title": "Ingénieur front-end sénior | valentin bourreau",
-    "description": "Ingénieur front-end senior avec plus de 10 ans d'expérience dans le développement logiciel et web. Pationé par la création de produit, l’experience utilisateur et la gestion d’équipe. Je travaille principalement sur React 18, Next.js 14 et Angular 17. Paris, France",
+    "description": "Ingénieur front-end senior avec plus de 10 ans d'expérience dans le développement logiciel et web. Passionné par la création de produit, l’experience utilisateur et la gestion d’équipe. Je travaille principalement sur React 18, Next.js 14 et Angular 17. Paris, France",
   },
   "header": {
     "menu": {
@@ -22,7 +22,7 @@ export default {
     "cta": "retour à la page d’accueil",
     "metadata": {
       "title": "Curriculum Vitae | valentin bourreau",
-      "description": "Curriculum vitae d'un ingénieur front-end senior avec plus de 10 ans d'expérience dans le développement logiciel et web. Pationé par la création de produit, l’experience utilisateur et la gestion d’équipe. Je travaille principalement sur React 18, Next.js 14 et Angular 17. Paris, France"
+      "description": "Curriculum vitae d'un ingénieur front-end senior avec plus de 10 ans d'expérience dans le développement logiciel et web. Passionné par la création de produit, l’experience utilisateur et la gestion d’équipe. Je travaille principalement sur React 18, Next.js 14 et Angular 17. Paris, France"
     },
   },
   "expertises": {
@@ -130,6 +130,16 @@ export default {
         content: "Intégration au sein du SI d'une entreprise industrielle :<br/>· Maintenance réseau informatique (Windows Server 2003).<br/>· Développement informatique (ERP Silog, Crystal Reports, SQL Server, VB Basic).<br/>· Assistance Utilisateur."
       }
     }
+  },
+  "roles": {
+    "front-end-lead":  "lead tech front-end",
+    "front-end-engineer": "ingénieur front-end",
+    "front-end-developer": "développpeur front-end",
+    "full-stack-developer": "développeur full-stack",
+    "ui-ux-designer": "UI/UX Designer",
+    "software-developer": "développpeur logiciel",
+    "help-desk": "support informatique",
+    "teacher": "formateur"
   },
   "qualifications": {
     "title": "qualifications",
