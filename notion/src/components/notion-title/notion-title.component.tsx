@@ -11,22 +11,23 @@ import { HeadingComponent, HeadingTags } from "@editorials/ui/server";
 export const NotionTitleComponent = ({
 	page
 }: NotionTitleComponentProps): JSX.Element => {
-	const rootPageId = process.env.BLOG_INDEX_ID;
+	const rootPageId = process.env.NEXT_PUBLIC_BLOG_INDEX_ID;
 	const cover = getNotionCover(page.cover);
 	const emoji = getNotionEmoji(page.icon);
 	const title = getNotionTitle(page.properties.title);
 	const parentId = getNotionPageParentId(page.parent);
+  const isRootPage =  page.id === rootPageId;
 
 	return (
 		<div className={styles.title}>
-			{parentId && page.id !== rootPageId ? (
+			{parentId && !isRootPage && (
 				<NotionParentNavigationComponent parentId={parentId} />
-			) : (
-				""
 			)}
 			<HeadingComponent tag={HeadingTags.H1}>
-				{emoji ? <span className={styles.emoji}>{emoji}</span> : ""}
-				{title}
+				<>
+          {emoji && <span className={styles.emoji}>{emoji}</span>}
+          {title}
+        </>
 			</HeadingComponent>
 			<NotionTitleCoverComponent cover={cover} />
 		</div>

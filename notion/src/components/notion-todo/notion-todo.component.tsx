@@ -12,13 +12,15 @@ const UncheckedTodoIcon = () => {
     )
 }
 
-export const NotionTodoComponent = ({ result }: NotionTodoComponentProps): JSX.Element => {
+const NotionTodoComponent = ({ result }: NotionTodoComponentProps): JSX.Element => {
     return (
         <div className={styles.todo}>
-            <div className={styles.checkbox}>           
+            <div className={styles.checkbox}>
                 <UncheckedTodoIcon />
             </div>
             <p>{result.to_do.rich_text.map((richtext: NotionResponse.RichText, index: number) => <NotionRichtextComponent key={index} richtext={richtext} />)}</p>
         </div>
     )
 }
+
+export default NotionTodoComponent;

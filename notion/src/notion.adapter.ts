@@ -1,46 +1,37 @@
-import { Page } from "notion-api-types/responses";
-import { NotionApi } from "./notion.api";
-import { NotionBlocks, NotionBlockType } from "./notion.model";
+import { NotionBlockType } from "./notion.model";
+import { NotionResponse } from "notion-api-types";
+import { BlockNotionApi } from "./api";
 
 export class NotionAdapter {
-    static async getPageMeta(pageId: string): Promise<Page> {
-        return await NotionApi.getPage(pageId);
-    }
+    private static async getPageChild(pageId: string): Promise<Array<string>> {
+        const blocks = await BlockNotionApi.fetchChildren(pageId);
 
-    static async getBlock(pageId: string): Promise<NotionBlocks> {
-        return await NotionApi.getBlock(pageId);
-    }
+        const filterChildPage = (block: NotionResponse.Block) => block.type === NotionBlockType.CHILD_PAGE;
+        const getPageIdFromBlock = (block: NotionResponse.Block) => block.id;
 
-    static async getPageData(pageId: string): Promise<[Page, NotionBlocks]> {
-        const page = await NotionApi.getPage(pageId);
-        const blocks = await NotionApi.getBlockChildren(pageId);
-        return [page, blocks];
-    }
+        if(!blocks) {
+          return [];
+        }
 
-    static async getPageChild(pageId: string): Promise<Array<string>> {
-        const blocks = await NotionApi.getBlockChildren(pageId);
-        const filterChildPage = (block: any) => block.type === NotionBlockType.CHILD_PAGE;
-        const getPageIdFromBlock = (block: any) => block.id;
         return blocks.results.filter(filterChildPage).map(getPageIdFromBlock);
     }
 
-    static async getPageChildRecursive(pageId: string): Promise<Array<Array<string>>> {
-        const children = []
-        const blocks = await NotionAdapter.getPageChild(pageId);
-        children.push(...blocks.map((child) => [child]))
-        for(const block of blocks) {
-            const childBlocks = await NotionAdapter.getPageChild(block);
-            children.push(...childBlocks.map((child) => [block, child]))
-            for(const child of childBlocks) {
-                const subChildBlocks = await NotionAdapter.getPageChild(child);
-                children.push(...subChildBlocks.map((subChild) => [block, child, subChild]))
-                for(const subChild of subChildBlocks) {
-                    const subSubChildBlocks = await NotionAdapter.getPageChild(subChild);
-                    children.push(...subSubChildBlocks.map((subSubChild) => [block, child, subChild, subSubChild]))
-                }
-            }
-        }
+    static async getPageChildRecursive(pageId: string, path: Array<string> = []): Promise<Array<Array<string>>> {
+      const children = [];
 
-        return children;
+      // Get child blocks of the current page/notion-block
+      const blocks = await NotionAdapter.getPageChild(pageId);
+
+      // Add the path for each notion-block found
+      for (const block of blocks) {
+        const newPath = [...path, block];
+        children.push(newPath);
+
+        // Recursively call the function for each child notion-block
+        const childBlocks = await this.getPageChildRecursive(block, newPath);
+        children.push(...childBlocks);
+      }
+
+      return children;
     }
 }

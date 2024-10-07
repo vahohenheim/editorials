@@ -57,7 +57,7 @@ export default {
       },
       "lead-tech-team": {
         "label": "confirmed",
-        "title": "lead tech front-end",
+        "title": "front-end lead tech",
         "text": "I spent my year 2023 with a lead mission for front-end team of 5 developers. I create membership united around a goal or work together to create shared best practices.<br/><br/>I also improve the recruitment process with the CTO, tech exercices, onboarding process. It’s also pasted by a reorganization of the documentation, and its feeding."
       },
       "ux-conception": {
@@ -133,7 +133,7 @@ export default {
       }
   },
   "roles": {
-    "front-end-lead":  "lead tech front-end",
+    "front-end-lead":  "front-end lead tech",
     "front-end-engineer": "front-end engineer",
     "front-end-developer": "front-end developer",
     "full-stack-developer": "full-stack developer",

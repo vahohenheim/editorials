@@ -36,8 +36,9 @@ export * from './utils/notion-page-parent-id';
 export * from './utils/notion-title';
 
 export * from './notion.adapter';
-export * from './notion.api';
 export * from './notion.helper';
 export * from './notion.model';
+
+export * from './api';
 
 

@@ -34,8 +34,8 @@ export default {
       },
       "lead-tech-team": {
         "label": "confirmé",
-        "title": "lead tech front-end",
-        "text": "J’ai passé mon année 2023 avec le rôle de lead tech front-end, d’une équipe de 5 développeurs. J’ai pu créer une adhésion, unir autour d’un objectif ou travailler/rechercher ensemble pour élaborer des meilleures pratiques communes.<br/><br/>J’ai pu améliorer le process de recrutement, les exercices tech, et le process d’intégration. Ces tâches sont passés par une réorganisation de la documentation et du process d’alimentation de celle-ci."
+        "title": "front-end lead tech",
+        "text": "J’ai passé mon année 2023 avec le rôle de front-end lead tech, d’une équipe de 5 développeurs. J’ai pu créer une adhésion, unir autour d’un objectif ou travailler/rechercher ensemble pour élaborer des meilleures pratiques communes.<br/><br/>J’ai pu améliorer le process de recrutement, les exercices tech, et le process d’intégration. Ces tâches sont passés par une réorganisation de la documentation et du process d’alimentation de celle-ci."
       },
       "ux-conception": {
         "label": "demain",
@@ -132,7 +132,7 @@ export default {
     }
   },
   "roles": {
-    "front-end-lead":  "lead tech front-end",
+    "front-end-lead":  "front-end lead tech",
     "front-end-engineer": "ingénieur front-end",
     "front-end-developer": "développpeur front-end",
     "full-stack-developer": "développeur full-stack",

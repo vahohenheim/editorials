@@ -1,14 +1,18 @@
-import { NotionAdapter } from "../../../notion.adapter";
 import { getNotionPageParentId } from "../../../utils/notion-page-parent-id";
-import { use } from "react";
+import { PageNotionApi } from "../../../api";
 
-export const useNotionPageHref = (pageId: string): string => {
+export const useNotionPageHref = async (pageId: string): Promise<string | null> => {
     const href = `/${pageId}`;
-    const page = use(NotionAdapter.getPageMeta(pageId));
+    const page = await PageNotionApi.fetch(pageId);
+
+    if(!page) {
+      return null;
+    }
+
     const parentId = getNotionPageParentId(page.parent);
 
     // TODO: Manage recursive parentPageFetching
-    if (!!parentId && parentId !== process.env.BLOG_INDEX_ID) {
+    if (!!parentId && parentId !== process.env.NEXT_PUBLIC_BLOG_INDEX_ID) {
         return `/${parentId}${href}`;
     }
 

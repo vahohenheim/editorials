@@ -3,7 +3,7 @@ import { RichTexts } from "notion-api-types/responses";
 import { NotionHeading2ComponentProps } from "./notion-heading-2.model";
 import { HeadingComponent, HeadingTags } from "@editorials/ui/server";
 
-export const NotionHeading2Component = ({
+const NotionHeading2Component = ({
 	result
 }: NotionHeading2ComponentProps): JSX.Element => {
 	const content = result.heading_2.rich_text
@@ -18,3 +18,5 @@ export const NotionHeading2Component = ({
 		</HeadingComponent>
 	);
 };
+
+export default NotionHeading2Component;

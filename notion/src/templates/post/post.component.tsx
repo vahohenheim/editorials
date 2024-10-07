@@ -1,18 +1,21 @@
-import { use } from "react";
-import { NotionAdapter } from "../../notion.adapter";
 import { NotionBlockComponent } from "../../components/notion-block/notion-block.component";
 import styles from "./post.module.css";
 import { NotionTitleComponent } from "../../components/notion-title/notion-title.component";
 import { Block } from "notion-api-types/responses";
+import { PageNotionApi } from "../../api";
+import { notFound } from "next/navigation";
 
-export const Post = ({
-	postId,
-	navigateToParent = true
+export const Post = async ({
+	postId
 }: {
 	postId: string;
-	navigateToParent?: boolean;
 }) => {
-	const [page, blocks] = use(NotionAdapter.getPageData(postId));
+	const [page, blocks] = await PageNotionApi.fetchData(postId);
+
+  if(!page || !blocks) {
+    return notFound();
+  }
+
 	return (
 		<main className={`${styles.main} container max-w-[800px]`}>
 			<NotionTitleComponent page={page} />

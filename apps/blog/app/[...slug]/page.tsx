@@ -1,5 +1,6 @@
-import { NotionAdapter, NotionHelper, Post, getNotionEmoji, getNotionTitle } from "@editorials/notion/server";
+import { NotionHelper, Post, getNotionEmoji, getNotionTitle } from "@editorials/notion/server";
 import { Metadata, ResolvingMetadata } from "next";
+import { PageNotionApi } from "../../../../notion/src/api";
 
 type Props<T> = {
   params: T;
@@ -11,7 +12,12 @@ export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const pageId = params.slug[params.slug.length - 1];
-  const page = await NotionAdapter.getPageMeta(pageId);
+  const page = await PageNotionApi.fetch(pageId);
+
+  if(!page) {
+    return {};
+  }
+
   const emoji = getNotionEmoji(page.icon);
   const title = getNotionTitle(page.properties.title);
 
@@ -27,6 +33,6 @@ export default async function NotionPost({ params }: { params: { slug: Array<str
 }
 
 export async function generateStaticParams() {
-  const rootPageId = process.env.BLOG_INDEX_ID || '';
+  const rootPageId = process.env.NEXT_PUBLIC_BLOG_INDEX_ID || '';
   return NotionHelper.getPaths(rootPageId);
 }

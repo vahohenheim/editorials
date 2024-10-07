@@ -4,7 +4,7 @@ import { NotionRichtextComponent } from '../notion-richtext/notion-richtext.comp
 import { NotionCalloutComponentProps } from './notion-callout.module';
 import styles from './notion-callout.module.css';
 
-export const NotionCalloutComponent = ({ result }: NotionCalloutComponentProps) => {
+const NotionCalloutComponent = ({ result }: NotionCalloutComponentProps) => {
     const emoji = (result.callout.icon as Emoji)?.emoji;
     const color = result.callout.color;
     return  <div className={[styles.callout, styles[color]].join(' ')}>
@@ -12,3 +12,5 @@ export const NotionCalloutComponent = ({ result }: NotionCalloutComponentProps) 
         <p className={styles.text}>{result.callout.rich_text.map((richtext: NotionResponse.RichText, index: number) => <NotionRichtextComponent key={index} richtext={richtext} />)}</p>
     </div>
 }
+
+export default NotionCalloutComponent;
