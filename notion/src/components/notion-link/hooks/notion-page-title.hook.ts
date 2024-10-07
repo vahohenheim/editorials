@@ -1,12 +1,16 @@
-import { getNotionTitle } from "../../../utils/notion-title";
-import { NotionAdapter } from "../../../notion.adapter";
-import { use } from "react";
+import { PageNotionApi } from "../../../api";
+import { getNotionTitle } from '../../../utils/notion-title';
 
-export const useNotionPageTitle = (pageId: string, label?: string): string | undefined  => {
+export const useNotionPageTitle = async (pageId: string, label?: string): Promise<string | null>  => {
     if(label) {
         return label;
     }
 
-    const page = use(NotionAdapter.getPageMeta(pageId));
+    const page = await PageNotionApi.fetch(pageId);
+
+    if(!page) {
+      return null
+    }
+
     return getNotionTitle(page.properties.title);
 }

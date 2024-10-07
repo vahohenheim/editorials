@@ -1,14 +1,19 @@
 import { Metadata } from 'next';
 import { Post } from '@editorials/notion/server';
 import {
-  NotionAdapter,
   getNotionEmoji,
   getNotionTitle,
 } from '@editorials/notion/server';
+import { PageNotionApi } from "../../../notion/src/api";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const rootPageId = process.env.BLOG_INDEX_ID || '';
-  const page = await NotionAdapter.getPageMeta(rootPageId);
+  const rootPageId = process.env.NEXT_PUBLIC_BLOG_INDEX_ID || '';
+  const page = await PageNotionApi.fetch(rootPageId);
+
+  if(!page) {
+    return {};
+  }
+
   const emoji = getNotionEmoji(page.icon);
   const title = getNotionTitle(page.properties.title);
 
@@ -19,6 +24,6 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Home() {
-  const rootPageId = process.env.BLOG_INDEX_ID || '';
-  return <Post navigateToParent={false} postId={rootPageId} />;
+  const rootPageId = process.env.NEXT_PUBLIC_BLOG_INDEX_ID || '';
+  return <Post postId={rootPageId} />;
 }

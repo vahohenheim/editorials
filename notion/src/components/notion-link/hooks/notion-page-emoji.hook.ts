@@ -1,8 +1,12 @@
-import { NotionAdapter } from "../../../notion.adapter";
 import { getNotionEmoji } from "../../../utils/notion-emoji";
-import { use } from "react";
+import { PageNotionApi } from "../../../api";
 
-export const useNotionPageEmoji = (pageId: string): string | undefined  => {
-    const page = use(NotionAdapter.getPageMeta(pageId));
-    return getNotionEmoji(page.icon);
+export const useNotionPageEmoji = async (pageId: string): Promise<string | null> => {
+  const page = await PageNotionApi.fetch(pageId);
+
+  if(!page) {
+    return null;
+  }
+
+  return getNotionEmoji(page.icon);
 }

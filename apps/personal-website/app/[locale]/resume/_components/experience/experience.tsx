@@ -1,10 +1,7 @@
 import { ExperienceComponentProps } from "./experience.model";
 import CompanyIconComponent from "../../../../_components/company-icon/company-icon";
 import MissionComponent from "../mission/mission";
-import DurationComponent from "../duration/duration";
 import { getScopedI18n } from "../../../../../locales/server";
-import dayjs from "dayjs";
-import { formatDateDifference } from "apps/personal-website/app/_utils/format-date-difference";
 
 
 const ExperienceComponent = async ({
@@ -27,10 +24,6 @@ const ExperienceComponent = async ({
           <span className="self-stretch flex-grow-0 flex-shrink-0 text-2xl">
               , {experience.company.location}
             </span>
-        </p>
-        <p
-          className="self-stretch flex-grow-0 flex-shrink-0 text-base font-semibold">
-          <DurationComponent startDate={dayjs(experience.startDate).locale(lang).format('MMMM YYYY')} endDate={dayjs(experience.endDate).locale(lang).format('MMMM YYYY')} duration={formatDateDifference(dayjs(experience.startDate), dayjs(experience.endDate), lang)} />
         </p>
       </div>
       <div className="flex flex-col justify-start items-start self-stretch flex-grow-0 flex-shrink-0 gap-6">

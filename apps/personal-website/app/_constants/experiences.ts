@@ -8,38 +8,50 @@ export const MISSIONS: Record<MissionId, Mission> = {
   [MissionId.EP_LEAD_FRONT_END]: {
     id: MissionId.EP_LEAD_FRONT_END,
     roles: [RoleId.FRONT_END_LEAD],
-    startDate: '2023-09-01',
+    startDate: '2023-01-01',
     endDate: '2024-09-01',
   },
   [MissionId.EP_ENGINEER_FRONT_END]: {
     id: MissionId.EP_ENGINEER_FRONT_END,
     roles: [RoleId.FRONT_END_ENGINEER],
     startDate: '2021-06-01',
-    endDate: '2023-08-01',
+    endDate: '2022-12-31',
   },
   [MissionId.CONSERTO_ENGINEER_FRONT_END]: {
     id: MissionId.CONSERTO_ENGINEER_FRONT_END,
     roles: [RoleId.FRONT_END_ENGINEER],
+    startDate: '2020-02-01',
+    endDate: '2021-06-01',
   },
   [MissionId.TROOPERS_ENGINEER_FRONT_END]: {
     id: MissionId.TROOPERS_ENGINEER_FRONT_END,
     roles: [RoleId.FRONT_END_DEVELOPER],
+    startDate: '2018-06-01',
+    endDate: '2020-01-01',
   },
   [MissionId.CONNEXING_FULL_STACK_DEVELOPER_UI_UX_DESIGNER]: {
     id: MissionId.CONNEXING_FULL_STACK_DEVELOPER_UI_UX_DESIGNER,
     roles: [RoleId.FULL_STACK_DEVELOPER, RoleId.UI_UX_DESIGNER],
+    startDate: '2016-09-01',
+    endDate: '2018-09-01',
   },
   [MissionId.NANTES_METROPOLE_TEACHER]: {
     id: MissionId.NANTES_METROPOLE_TEACHER,
     roles: [RoleId.TEACHER],
+    startDate: '2018-05-01',
+    endDate: '2018-09-01',
   },
   [MissionId.ANJOU_FULL_STACK_DEVELOPER]: {
     id: MissionId.ANJOU_FULL_STACK_DEVELOPER,
     roles: [RoleId.FULL_STACK_DEVELOPER],
+    startDate: '2015-09-01',
+    endDate: '2016-09-01',
   },
   [MissionId.DROUAULT_SOFTWARE_DEVELOPER_HELP_DESK]: {
     id: MissionId.DROUAULT_SOFTWARE_DEVELOPER_HELP_DESK,
     roles: [RoleId.SOFTWARE_DEVELOPER, RoleId.HELP_DESK],
+    startDate: '2013-09-01',
+    endDate: '2015-09-01',
   },
 }
 

@@ -16,7 +16,10 @@
         "name": "next"
       }
     ],
-    "types": ["jest", "node"]
+    "types": [
+      "jest",
+      "node"
+    ]
   },
   "include": [
     "**/*.ts",
@@ -25,8 +28,10 @@
     "**/*.jsx",
     "../../apps/blog/.next/types/**/*.ts",
     "../../dist/apps/blog/.next/types/**/*.ts",
-    "next-env.d.ts"
-, "tailwind.config.js"  ],
+    "next-env.d.ts",
+    "tailwind.config.js",
+    ".next/types/**/*.ts"
+  ],
   "exclude": [
     "node_modules",
     "jest.config.ts",

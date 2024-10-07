@@ -1,15 +1,15 @@
 import { NotionResponse } from "notion-api-types";
-import { NotionLinkComponent } from "../notion-link/notion-link.component";
+import NotionLinkComponent from "../notion-link/notion-link.component";
 import { Annotations, AnnotationType, NotionRichtextComponentProps, NotionRichtextEquationComponentProps, NotionRichtextMentionComponentProps, NotionRichtextTextComponentProps } from "./notion-richtext.model";
 import styles from './notion-richtext.module.css';
 
 export const NotionRichtextComponent = ({ richtext }: NotionRichtextComponentProps) => {
     switch(richtext.type) {
-        case 'text': 
+        case 'text':
             return <NotionRichtextTextComponent richtext={richtext} />
-        case 'mention': 
+        case 'mention':
             return <NotionRichtextMentionComponent richtext={richtext} />
-        case 'equation': 
+        case 'equation':
             return <NotionRichtextEquationComponent richtext={richtext} />
     }
 }
@@ -36,10 +36,11 @@ export const NotionRichtextTextComponent = ({ richtext }: NotionRichtextTextComp
         return href.split('/')[1];
     }
 
-    if(!!richtext.href) {
+    if(richtext.href) {
         const pageId = extractPageIdFromRichtextHref(richtext.href)
         return <NotionLinkComponent pageId={pageId} label={richtext.text.content}></NotionLinkComponent>
     }
+
     const className = defineClassNamesFromAnnotation(richtext);
     return <span className={className}>{richtext.text.content}</span>
 }

@@ -5,7 +5,7 @@ import { NotionImageComponentProps } from './notion-image.model';
 import { NotionRichtextComponent } from '../notion-richtext/notion-richtext.component';
 import { NotionResponse } from 'notion-api-types';
 
-export const NotionImageComponent = ({ result }: NotionImageComponentProps): JSX.Element => {
+const NotionImageComponent = ({ result }: NotionImageComponentProps): JSX.Element => {
 
     if (result.image.caption) {
        return  <p>{result.image.caption.map((richtext: NotionResponse.RichText, index: number) => <NotionRichtextComponent key={index} richtext={richtext} />)}</p>
@@ -13,13 +13,13 @@ export const NotionImageComponent = ({ result }: NotionImageComponentProps): JSX
 
     const getImage = (result: Blocks.Image) => {
         switch(result.image.type) {
-            case 'file': 
+            case 'file':
                 return result.image.file.url;
-            case 'external': 
+            case 'external':
                 return result.image.external.url;
         }
     }
-    
+
     const image = getImage(result);
 
     if(!image) {
@@ -30,3 +30,5 @@ export const NotionImageComponent = ({ result }: NotionImageComponentProps): JSX
 
     return <Image className={styles.image} src={image} priority={true} alt={'cover'} width={700} height={300} />
 }
+
+export default NotionImageComponent;

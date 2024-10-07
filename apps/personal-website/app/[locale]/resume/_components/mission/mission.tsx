@@ -4,6 +4,8 @@ import { Mission } from "../../../../_models/mission";
 import dayjs from "dayjs";
 import { formatDateDifference } from "../../../../_utils/format-date-difference";
 import { RoleId } from "../../../../_models/role";
+import 'dayjs/locale/fr';
+
 
 const MissionComponent = async ({ mission, lang }: { mission: Mission, lang: 'fr' | 'en' }) => {
   const scopedT = await getScopedI18n(`experiences.roles.${mission.id}`);
@@ -18,9 +20,9 @@ const MissionComponent = async ({ mission, lang }: { mission: Mission, lang: 'fr
           className="self-stretch flex-grow-0 flex-shrink-0 text-xl font-bold">
           {mission.roles.map((role: RoleId) => rolesScopedT(role)).join(' & ')}
         </p>
-        {!!mission.startDate || !!mission.endDate && <p className="self-stretch flex-grow-0 flex-shrink-0 text-base">
-          <DurationComponent startDate={dayjs(mission.startDate).format('MMMM YYYY')}
-                             endDate={dayjs(mission.endDate).format('MMMM YYYY')}
+        {!!mission.startDate && !!mission.endDate && <p className="self-stretch flex-grow-0 flex-shrink-0 text-base">
+          <DurationComponent startDate={dayjs(mission.startDate).locale(lang).format('MMMM YYYY')}
+                             endDate={dayjs(mission.endDate).locale(lang).format('MMMM YYYY')}
                              duration={formatDateDifference(dayjs(mission.startDate), dayjs(mission.endDate), lang)} />
         </p>}
       </div>

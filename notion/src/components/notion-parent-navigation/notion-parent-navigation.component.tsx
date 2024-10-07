@@ -3,14 +3,14 @@ import { NotionParentNavigationComponentProps } from "./notion-parent-navigation
 import styles from './notion-parent-navigation.module.css';
 
 export const NotionParentNavigationComponent = ({ parentId }: NotionParentNavigationComponentProps): JSX.Element => {
-    
+
     const defineHref = (parentId: string) => {
-        const rootPageId = process.env.BLOG_INDEX_ID || '';
+        const rootPageId = process.env.NEXT_PUBLIC_BLOG_INDEX_ID || '';
         if(parentId === rootPageId) {
             return '/';
         }
         return `/${parentId}`;
     }
 
-    return <div className={styles.parentNavigation}><Link href={defineHref(parentId)}>« Retour</Link></div> 
+    return <div className={styles.parentNavigation}><Link href={defineHref(parentId)}>« Retour</Link></div>
 }

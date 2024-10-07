@@ -5,7 +5,7 @@ import styles from './notion-bulleted-list-item.module.css';
 
 // TODO: create ItemListComponent
 // TODO: rename NotionBulletedListItemComponent
-export const NotionBulletedListItemComponent = ({ result }: NotionBulletedListItemComponentProps) => {
+const NotionBulletedListItemComponent = ({ result }: NotionBulletedListItemComponentProps) => {
     return (
         <div className={styles.bulletedListItem}>
             <div className={styles.bullet}></div>
@@ -13,3 +13,5 @@ export const NotionBulletedListItemComponent = ({ result }: NotionBulletedListIt
         </div>
     )
 }
+
+export default NotionBulletedListItemComponent;
